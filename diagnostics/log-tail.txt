@@ -1,0 +1,222 @@
+11T19:52:13.5513050Z #8 10.19    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.8/5.8 MB 142.8 MB/s eta 0:00:00
+test	UNKNOWN STEP	2026-10-11T19:52:13.5513563Z #8 10.20 Downloading path-17.1.1-py3-none-any.whl (23 kB)
+test	UNKNOWN STEP	2026-10-11T19:52:13.5514028Z #8 10.22 Downloading typish-1.9.3-py3-none-any.whl (45 kB)
+test	UNKNOWN STEP	2026-10-11T19:52:13.5514588Z #8 10.22    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.1/45.1 kB 246.3 MB/s eta 0:00:00
+test	UNKNOWN STEP	2026-10-11T19:52:13.5515108Z #8 10.23 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+test	UNKNOWN STEP	2026-10-11T19:52:13.7746867Z #8 10.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 297.5 MB/s eta 0:00:00
+test	UNKNOWN STEP	2026-10-11T19:52:13.7747772Z #8 10.25 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+test	UNKNOWN STEP	2026-10-11T19:52:13.7748719Z #8 10.25    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 170.4 MB/s eta 0:00:00
+test	UNKNOWN STEP	2026-10-11T19:52:13.7749721Z #8 10.26 Downloading fonttools-4.66.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+test	UNKNOWN STEP	2026-10-11T19:52:13.7751278Z #8 10.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 139.8 MB/s eta 0:00:00
+test	UNKNOWN STEP	2026-10-11T19:52:14.0243062Z #8 10.70 Installing collected packages: typish, cadquery-ocp, typing_extensions, pyparsing, path, numpy, multimethod, fonttools, nlopt, ezdxf, casadi, cadquery
+test	UNKNOWN STEP	2026-10-11T19:52:21.6575166Z #8 18.34 Successfully installed cadquery-2.5.2 cadquery-ocp-7.7.2 casadi-3.8.1 ezdxf-1.4.4 fonttools-4.66.1 multimethod-1.12 nlopt-2.11.0 numpy-2.4.6 path-17.1.1 pyparsing-3.3.3 typing_extensions-4.16.0 typish-1.9.3
+test	UNKNOWN STEP	2026-10-11T19:52:21.7795178Z #8 18.34 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+test	UNKNOWN STEP	2026-10-11T19:52:21.7796244Z #8 18.46 
+test	UNKNOWN STEP	2026-10-11T19:52:21.7796542Z #8 18.46 [notice] A new release of pip is available: 24.0 -> 26.2.1
+test	UNKNOWN STEP	2026-10-11T19:52:21.7796979Z #8 18.46 [notice] To update, run: pip install --upgrade pip
+test	UNKNOWN STEP	2026-10-11T19:52:22.3502941Z #8 19.03 No broken requirements found.
+test	UNKNOWN STEP	2026-10-11T19:52:24.4762476Z #8 DONE 21.2s
+test	UNKNOWN STEP	2026-10-11T19:52:24.6273320Z 
+test	UNKNOWN STEP	2026-10-11T19:52:24.6275589Z #9 [4/6] RUN python -c "from pathlib import Path; import cadquery as cq; import numpy as np; s=cq.Workplane('XY').box(10,10,2).faces('>Z').workplane().hole(2); assert s.val().isValid(); cq.exporters.export(s,'/tmp/cad-preflight.step'); t=cq.importers.importStep('/tmp/cad-preflight.step'); assert t.val().isValid(); Path('/tmp/cad-preflight.step').unlink(); print({'numpy':np.__version__,'cadquery':cq.__version__,'step_roundtrip':'passed'})"
+test	UNKNOWN STEP	2026-10-11T19:52:25.6642086Z #9 1.187 {'numpy': '2.4.6', 'cadquery': '2.5.2', 'step_roundtrip': 'passed'}
+test	UNKNOWN STEP	2026-10-11T19:52:25.9168628Z #9 DONE 1.4s
+test	UNKNOWN STEP	2026-10-11T19:52:26.0986649Z 
+test	UNKNOWN STEP	2026-10-11T19:52:26.0987189Z #10 [5/6] COPY sandbox.py /runner.py
+test	UNKNOWN STEP	2026-10-11T19:52:26.0988257Z #10 DONE 0.0s
+test	UNKNOWN STEP	2026-10-11T19:52:26.0988757Z 
+test	UNKNOWN STEP	2026-10-11T19:52:26.0988990Z #11 [6/6] WORKDIR /work
+test	UNKNOWN STEP	2026-10-11T19:52:26.0989367Z #11 DONE 0.0s
+test	UNKNOWN STEP	2026-10-11T19:52:26.0989626Z 
+test	UNKNOWN STEP	2026-10-11T19:52:26.0990847Z #12 exporting to image
+test	UNKNOWN STEP	2026-10-11T19:52:26.0991344Z #12 exporting layers
+test	UNKNOWN STEP	2026-10-11T19:52:29.1134940Z #12 exporting layers 3.2s done
+test	UNKNOWN STEP	2026-10-11T19:52:29.1327400Z #12 writing image sha256:d2b2344d35595d4ab631bce2ef2e197d2d84b86e7899afe6e78960785593dc03 done
+test	UNKNOWN STEP	2026-10-11T19:52:29.1338392Z #12 naming to docker.io/library/cad-executor done
+test	UNKNOWN STEP	2026-10-11T19:52:29.1339180Z #12 DONE 3.2s
+test	UNKNOWN STEP	2026-10-11T19:52:30.6390658Z ##[group]Run set -o pipefail
+test	UNKNOWN STEP	2026-10-11T19:52:30.6391029Z ^[[36;1mset -o pipefail^[[0m
+test	UNKNOWN STEP	2026-10-11T19:52:30.6391454Z ^[[36;1mexport LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"^[[0m
+test	UNKNOWN STEP	2026-10-11T19:52:30.6392080Z ^[[36;1mtimeout 45m python -u cpu_native.py infer 2>&1 | tee outputs/inference.log^[[0m
+test	UNKNOWN STEP	2026-10-11T19:52:30.6461661Z shell: /usr/bin/bash -el {0}
+test	UNKNOWN STEP	2026-10-11T19:52:30.6461942Z env:
+test	UNKNOWN STEP	2026-10-11T19:52:30.6462159Z   HF_HUB_DISABLE_IMPLICIT_TOKEN: 1
+test	UNKNOWN STEP	2026-10-11T19:52:30.6462438Z   HF_HUB_DISABLE_TELEMETRY: 1
+test	UNKNOWN STEP	2026-10-11T19:52:30.6462687Z   HF_HUB_DISABLE_XET: 1
+test	UNKNOWN STEP	2026-10-11T19:52:30.6462926Z   MPLBACKEND: Agg
+test	UNKNOWN STEP	2026-10-11T19:52:30.6463151Z   OMP_NUM_THREADS: 4
+test	UNKNOWN STEP	2026-10-11T19:52:30.6463388Z   OPENBLAS_NUM_THREADS: 4
+test	UNKNOWN STEP	2026-10-11T19:52:30.6463665Z   MAMBA_ROOT_PREFIX: /home/runner/micromamba
+test	UNKNOWN STEP	2026-10-11T19:52:30.6464011Z   MAMBA_EXE: /home/runner/micromamba-bin/micromamba
+test	UNKNOWN STEP	2026-10-11T19:52:30.6464409Z   CONDARC: /home/runner/work/_temp/setup-micromamba/.condarc
+test	UNKNOWN STEP	2026-10-11T19:52:30.6464800Z ##[endgroup]
+test	UNKNOWN STEP	2026-10-11T19:52:37.0058485Z 
+test	UNKNOWN STEP	2026-10-11T19:52:37.1651738Z Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+test	UNKNOWN STEP	2026-10-11T19:52:57.0060714Z Fetching 12 files:  17%|█▋        | 2/12 [00:00<00:00, 12.56it/s]
+test	UNKNOWN STEP	2026-10-11T19:53:25.3307901Z Fetching 12 files:  17%|█▋        | 2/12 [00:20<01:40, 10.00s/it]
+test	UNKNOWN STEP	2026-10-11T19:53:25.9945561Z Fetching 12 files:  25%|██▌       | 3/12 [00:48<02:24, 16.11s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:12.8326173Z Fetching 12 files:  33%|███▎      | 4/12 [00:48<01:37, 12.25s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:13.0839201Z Fetching 12 files:  42%|████▏     | 5/12 [01:35<02:14, 19.17s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:31.8522156Z Fetching 12 files:  50%|█████     | 6/12 [01:36<01:36, 16.01s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:31.9529482Z Fetching 12 files:  58%|█████▊    | 7/12 [01:54<01:22, 16.41s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:32.1735649Z Fetching 12 files:  67%|██████▋   | 8/12 [01:54<00:57, 14.37s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:32.7534779Z Fetching 12 files:  75%|███████▌  | 9/12 [01:55<00:38, 12.80s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:59.0427918Z Fetching 12 files:  83%|████████▎ | 10/12 [01:55<00:23, 11.57s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:59.0430726Z Fetching 12 files: 100%|██████████| 12/12 [02:22<00:00, 11.84s/it]
+test	UNKNOWN STEP	2026-10-11T19:54:59.0431983Z Fetching 12 files: 100%|██████████| 12/12 [02:22<00:00, 11.84s/it]
+test	UNKNOWN STEP	2026-10-11T19:55:00.3042045Z `torch_dtype` is deprecated! Use `dtype` instead!
+test	UNKNOWN STEP	2026-10-11T19:55:00.6230938Z 
+test	UNKNOWN STEP	2026-10-11T19:57:11.7633722Z Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]
+test	UNKNOWN STEP	2026-10-11T19:59:30.1030168Z Loading checkpoint shards:  17%|█▋        | 1/6 [02:11<10:55, 131.11s/it]
+test	UNKNOWN STEP	2026-10-11T20:01:47.3824947Z Loading checkpoint shards:  33%|███▎      | 2/6 [04:29<09:01, 135.36s/it]
+test	UNKNOWN STEP	2026-10-11T20:04:04.3619589Z Loading checkpoint shards:  50%|█████     | 3/6 [06:46<06:48, 136.25s/it]
+test	UNKNOWN STEP	2026-10-11T20:06:24.2150612Z Loading checkpoint shards:  67%|██████▋   | 4/6 [09:03<04:33, 136.54s/it]
+test	UNKNOWN STEP	2026-10-11T20:06:27.1152390Z Loading checkpoint shards:  83%|████████▎ | 5/6 [11:23<02:17, 137.73s/it]
+test	UNKNOWN STEP	2026-10-11T20:06:27.1454120Z ##[error]The runner has received a shutdown signal. This can happen when the runner service is stopped, or a manually started runner is canceled.
+test	UNKNOWN STEP	2026-10-11T20:06:27.1461530Z ##[error]Process completed with exit code 143.
+test	UNKNOWN STEP	2026-10-11T20:06:27.3105031Z Cleaning up orphan processes
+test	UNKNOWN STEP	2026-10-11T20:06:27.5824124Z Terminate orphan process: pid (4896) (timeout)
+test	UNKNOWN STEP	2026-10-11T20:06:27.5965841Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, mamba-org/setup-micromamba@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publish	UNKNOWN STEP	﻿2026-10-11T20:06:34.1835334Z Current runner version: '2.337.0'
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1860497Z ##[group]Runner Image Provisioner
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1861505Z Hosted Compute Agent
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1862133Z Version: 20261002.596
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1862915Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1863680Z Build Date: 2026-10-02T22:28:27Z
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1864458Z Worker ID: {1ad6de84-a43f-4204-a2c6-ebc1bedf7af8}
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1865224Z Region: westus3
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1866072Z Cloud: Azure
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1866792Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1868486Z ##[group]Operating System
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1869298Z Ubuntu
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1869884Z 22.04.5
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1870439Z LTS
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1871042Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1871631Z ##[group]Runner Image
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1872225Z Image: ubuntu-22.04
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1872900Z Version: 20261004.315.1
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1874188Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20261004.315/images/ubuntu/Ubuntu2204-Readme.md
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1876346Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20261004.315
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1877702Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1879014Z ##[group]GITHUB_TOKEN Permissions
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1881124Z Contents: write
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1881894Z Metadata: read
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1882495Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1884724Z Secret source: Actions
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1886132Z Cache mode: write
+publish	UNKNOWN STEP	2026-10-11T20:06:34.1887038Z Prepare workflow directory
+publish	UNKNOWN STEP	2026-10-11T20:06:34.2238842Z Prepare all required actions
+publish	UNKNOWN STEP	2026-10-11T20:06:34.2287393Z Getting action download info
+publish	UNKNOWN STEP	2026-10-11T20:06:34.5297836Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publish	UNKNOWN STEP	2026-10-11T20:06:34.6894482Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4006437Z Complete job name: publish
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4802832Z ##[group]Run actions/checkout@v4
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4803749Z with:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4804203Z   persist-credentials: false
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4804818Z   repository: prosser-cathey/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4809104Z   token: ***
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4809559Z   ssh-strict: true
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4809998Z   ssh-user: git
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4810424Z   clean: true
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4810873Z   sparse-checkout-cone-mode: true
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4811393Z   fetch-depth: 1
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4811824Z   fetch-tags: false
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4812264Z   show-progress: true
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4812713Z   lfs: false
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4813121Z   submodules: false
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4813564Z   set-safe-directory: true
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4814067Z   allow-unsafe-pr-checkout: false
+publish	UNKNOWN STEP	2026-10-11T20:06:35.4815062Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:35.5924420Z Syncing repository: prosser-cathey/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:35.5927077Z ##[group]Getting Git version info
+publish	UNKNOWN STEP	2026-10-11T20:06:35.5928246Z Working directory is '/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public'
+publish	UNKNOWN STEP	2026-10-11T20:06:35.5929752Z [command]/usr/bin/git version
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6018216Z git version 2.55.0
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6040694Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6056671Z Temporarily overriding HOME='/home/runner/work/_temp/5d764dfd-1e0e-49e6-a427-61491a806ca0' before making global git config changes
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6059223Z Adding repository directory to the temporary git global config as a safe directory
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6062882Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6108920Z Deleting the contents of '/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public'
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6114303Z ##[group]Initializing the repository
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6120300Z [command]/usr/bin/git init /home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6259818Z hint: Using 'master' as the name for the initial branch. This default branch name
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6262183Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6264232Z hint: to use in all of your new repositories, which will suppress this warning,
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6266072Z hint: call:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6268147Z hint:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6269252Z hint: 	git config --global init.defaultBranch <name>
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6270665Z hint:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6271842Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6273584Z hint: 'development'. The just-created branch can be renamed via this command:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6275096Z hint:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6276362Z hint: 	git branch -m <name>
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6277385Z hint:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6278605Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6281112Z Initialized empty Git repository in /home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/.git/
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6285094Z [command]/usr/bin/git remote add origin https://github.com/prosser-cathey/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6326730Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6328059Z ##[group]Disabling automatic garbage collection
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6331519Z [command]/usr/bin/git config --local gc.auto 0
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6370931Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6372495Z ##[group]Setting up auth
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6384625Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6418007Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6887907Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish	UNKNOWN STEP	2026-10-11T20:06:35.6934377Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7208924Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7250181Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7517573Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7562345Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7563363Z ##[group]Fetching the repository
+publish	UNKNOWN STEP	2026-10-11T20:06:35.7572522Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2fef5b926b2f436c530bd15b96a206b4d6d2c43d:refs/remotes/origin/main
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2589786Z From https://github.com/prosser-cathey/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2593285Z  * [new ref]         2fef5b926b2f436c530bd15b96a206b4d6d2c43d -> origin/main
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2597770Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2599322Z ##[group]Determining the checkout info
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2601091Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2608701Z [command]/usr/bin/git sparse-checkout disable
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2668885Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2711250Z ##[group]Checking out the ref
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2717186Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2845085Z Switched to a new branch 'main'
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2850197Z branch 'main' set up to track 'origin/main'.
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2860099Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2914583Z [command]/usr/bin/git log -1 --format=%H
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2949706Z 2fef5b926b2f436c530bd15b96a206b4d6d2c43d
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2960301Z ##[group]Removing auth
+publish	UNKNOWN STEP	2026-10-11T20:06:36.2963847Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3003676Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3269086Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3298695Z http.https://github.com/.extraheader
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3308673Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3352096Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3611913Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3651529Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish	UNKNOWN STEP	2026-10-11T20:06:36.3908600Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4230612Z ##[group]Run actions/download-artifact@v4
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4231913Z with:
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4232798Z   name: cad-coder-results
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4233831Z   path: received
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4234792Z   merge-multiple: false
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4236346Z   repository: prosser-cathey/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4237839Z   run-id: 38169662881
+publish	UNKNOWN STEP	2026-10-11T20:06:36.4238796Z ##[endgroup]
+publish	UNKNOWN STEP	2026-10-11T20:06:36.5948518Z Downloading single artifact
+publish	UNKNOWN STEP	2026-10-11T20:06:36.6104168Z (node:2090) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish	UNKNOWN STEP	2026-10-11T20:06:36.6108468Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish	UNKNOWN STEP	2026-10-11T20:06:36.8233959Z ##[error]Unable to download artifact(s): Artifact not found for name: cad-coder-results
+publish	UNKNOWN STEP	        Please ensure that your artifact is not expired and the artifact was uploaded using a compatible version of toolkit/upload-artifact.
+publish	UNKNOWN STEP	        For more information, visit the GitHub Artifacts FAQ: https://github.com/actions/toolkit/blob/main/packages/artifact/docs/faq.md
+publish	UNKNOWN STEP	2026-10-11T20:06:36.8659148Z Post job cleanup.
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9600743Z [command]/usr/bin/git version
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9648409Z git version 2.55.0
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9694882Z Temporarily overriding HOME='/home/runner/work/_temp/6e9d2af8-c5d4-41f0-a8f4-bc18a26a3a71' before making global git config changes
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9698460Z Adding repository directory to the temporary git global config as a safe directory
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9702117Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9751499Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish	UNKNOWN STEP	2026-10-11T20:06:36.9792524Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:37.0098499Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish	UNKNOWN STEP	2026-10-11T20:06:37.0131840Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish	UNKNOWN STEP	2026-10-11T20:06:37.0427394Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish	UNKNOWN STEP	2026-10-11T20:06:37.0472351Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish	UNKNOWN STEP	2026-10-11T20:06:37.0937781Z Cleaning up orphan processes
+publish	UNKNOWN STEP	2026-10-11T20:06:37.1447286Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
