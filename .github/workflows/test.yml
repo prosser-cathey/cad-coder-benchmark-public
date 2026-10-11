@@ -2,7 +2,7 @@ name: CAD-Coder two-image NF4 CPU test
 on:
   push:
     branches: [main]
-    paths: [bench.py, sandbox.py, Dockerfile, .github/workflows/test.yml]
+    paths: [bench.py, cpu_native.py, sandbox.py, Dockerfile, .github/workflows/test.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -35,6 +35,7 @@ jobs:
           sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup
           free -h > outputs/hardware.txt
           df -h >> outputs/hardware.txt
+          lscpu > outputs/cpu-hardware.txt
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-name: bench
@@ -64,11 +65,11 @@ jobs:
           test -s runtime-probe/predicted.step
           test -s runtime-probe/predicted.stl
           cp runtime-probe/sandbox.json outputs/sandbox-preflight.json
-      - name: Run CAD-Coder, one attempt per image
+      - name: Run profiled native-CPU CAD-Coder, one attempt per image
         run: |
           set -o pipefail
           export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-          timeout 45m python -u bench.py infer 2>&1 | tee outputs/inference.log
+          timeout 45m python -u cpu_native.py infer 2>&1 | tee outputs/inference.log
       - name: Execute generated programs without network or credentials
         if: always()
         run: |
