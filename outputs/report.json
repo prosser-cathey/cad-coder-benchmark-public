@@ -1,0 +1,19 @@
+{
+  "model": "CAD-Coder",
+  "variant": "4-bit NF4 CPU",
+  "scale_policy": "Center and isotropically normalize longest dimension; no rotation fitting or geometry repair; absolute scale not inferred.",
+  "cases": [
+    {
+      "name": "mounting-plate",
+      "passed": null,
+      "status": "not_run",
+      "reason": "No model generation recorded"
+    },
+    {
+      "name": "stepped-flange",
+      "passed": null,
+      "status": "not_run",
+      "reason": "No model generation recorded"
+    }
+  ]
+}
