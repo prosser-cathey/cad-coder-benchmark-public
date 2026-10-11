@@ -1,0 +1,139 @@
+name: CAD-Coder two-image NF4 CPU test
+on:
+  push:
+    branches: [main]
+    paths: [bench.py, sandbox.py, Dockerfile, .github/workflows/test.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cad-coder-test
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash -el {0}
+    env:
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DISABLE_XET: '1'
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Initialize and free ephemeral runner disk
+        run: |
+          rm -rf outputs
+          mkdir outputs
+          echo '{"status":"setup","model":"CAD-Coder NF4 CPU"}' > outputs/status.json
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup
+          free -h > outputs/hardware.txt
+          df -h >> outputs/hardware.txt
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: bench
+          create-args: >-
+            python=3.10 pythonocc-core=7.9.0 numpy=1.26.4 matplotlib-base=3.10.9 pip libstdcxx-ng
+            -c conda-forge
+          cache-environment: false
+      - name: Install pinned CPU packages and generate fixtures
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'numpy<2' transformers==4.57.1 accelerate==1.10.1 bitsandbytes==0.48.1 huggingface-hub==0.36.2 sentencepiece==0.2.1 protobuf==4.25.8 einops==0.8.1 shortuuid==1.0.13 trimesh==5.1.1 scipy pillow
+          python -m pip freeze > outputs/environment.txt
+          git clone --filter=blob:none https://github.com/anniedoris/CAD-Coder.git upstream
+          git -C upstream checkout --detach 7f40b4827b029731ef97313a116d62519e313960
+          python -u bench.py prepare 2>&1 | tee outputs/prepare.log
+      - name: Build isolated CadQuery executor
+        run: docker build -t cad-executor .
+      - name: Run CAD-Coder, one attempt per image
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          timeout 45m python -u bench.py infer 2>&1 | tee outputs/inference.log
+      - name: Execute generated programs without network or credentials
+        if: always()
+        run: |
+          for part in mounting-plate stepped-flange; do
+            src="outputs/$part/generated.py"
+            test -f "$src" || continue
+            mkdir -p "sandbox-work/$part"
+            cp "$src" "sandbox-work/$part/generated.py"
+            timeout 180s docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 3g --cpus 2 --ulimit fsize=65536:65536 --tmpfs /tmp:rw,nosuid,size=128m --user "$(id -u):$(id -g)" -v "$PWD/sandbox-work/$part:/work:rw" cad-executor > "outputs/$part/execution.log" 2>&1 || true
+            for f in predicted.step predicted.stl sandbox.json; do
+              test ! -L "sandbox-work/$part/$f" || continue
+              test ! -f "sandbox-work/$part/$f" || cp "sandbox-work/$part/$f" "outputs/$part/$f"
+            done
+          done
+      - name: Measure and render actual exported geometry
+        if: always()
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          timeout 5m python -u bench.py evaluate 2>&1 | tee outputs/evaluation.log
+      - name: Record job status
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          mkdir -p outputs
+          python -c 'import os,json; json.dump({"job_status":os.environ["JOB_STATUS"],"run_id":os.environ["GITHUB_RUN_ID"]},open("outputs/status.json","w"),indent=2)'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-coder-results
+          path: outputs/
+          retention-days: 7
+  publish:
+    if: always()
+    needs: test
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: cad-coder-results
+          path: received
+      - name: Copy only bounded result files
+        run: |
+          python3 - <<'PY'
+          import pathlib,shutil
+          files=[]; size=0; root=pathlib.Path('received')
+          for p in root.rglob('*'):
+              if p.is_symlink(): raise RuntimeError('Symlink refused')
+              if not p.is_file(): continue
+              rel=p.relative_to(root)
+              if any(x.startswith('.') for x in rel.parts): raise RuntimeError('Hidden path refused')
+              if p.suffix not in {'.json','.txt','.log','.png','.step','.stl','.py'}: continue
+              size+=p.stat().st_size
+              if size>30*1024*1024: raise RuntimeError('Output size limit exceeded')
+              files.append((p,rel))
+          shutil.rmtree('outputs',ignore_errors=True)
+          for p,rel in files:
+              dest=pathlib.Path('outputs')/rel; dest.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(p,dest)
+          PY
+      - name: Publish results only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- outputs
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record CAD-Coder NF4 test results'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:main
