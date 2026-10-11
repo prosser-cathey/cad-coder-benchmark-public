@@ -1,0 +1,132 @@
+name: Inspect existing CAD-Coder run
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/inspect-existing.yml]
+  workflow_run:
+    workflows: [CAD-Coder two-image NF4 CPU test]
+    types: [completed]
+permissions:
+  contents: write
+  actions: read
+  checks: read
+concurrency:
+  group: inspect-cad-coder-existing
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.head_sha == '2fef5b926b2f436c530bd15b96a206b4d6d2c43d'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    env:
+      TARGET_SHA: 2fef5b926b2f436c530bd15b96a206b4d6d2c43d
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Read existing run and recover its artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p diagnostics
+          printf '%s\n' "$TARGET_SHA" > diagnostics/target-sha.txt
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/test.yml/runs?head_sha=$TARGET_SHA&per_page=100" > diagnostics/workflow-runs.json 2> diagnostics/api-error.txt
+          RUN_ID=$(jq -r --arg sha "$TARGET_SHA" '[.workflow_runs[] | select(.head_sha == $sha)] | sort_by(.id) | last | .id // empty' diagnostics/workflow-runs.json)
+          if test -z "$RUN_ID"; then
+            echo 'No workflow run was returned for the specified commit.' > diagnostics/no-run.txt
+            exit 0
+          fi
+          printf '%s\n' "$RUN_ID" > diagnostics/target-run-id.txt
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID" > diagnostics/run.json 2>> diagnostics/api-error.txt
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/jobs?filter=latest&per_page=100" > diagnostics/jobs.json 2>> diagnostics/api-error.txt
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/artifacts?per_page=100" > diagnostics/artifacts.json 2>> diagnostics/api-error.txt
+          gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs?per_page=100" > diagnostics/check-runs.json 2>> diagnostics/api-error.txt || true
+          if jq -e '.status == "completed"' diagnostics/run.json >/dev/null; then
+            timeout 60s gh run view "$RUN_ID" --repo "$GITHUB_REPOSITORY" --log > run-log.txt 2> diagnostics/log-error.txt || true
+            python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('run-log.txt')
+          if p.exists():
+              text=p.read_text(errors='replace')
+              text=re.sub(r'(?:gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+)','[REDACTED]',text)
+              Path('diagnostics/log-tail.txt').write_text(text[-24000:])
+              lines=[s[:1500] for s in text.splitlines() if re.search(r'Traceback|Error:|Exception:|Killed|timed out|Process completed|exceeded|Resource not accessible|No space left',s,re.I)]
+              Path('diagnostics/error-lines.txt').write_text('\n'.join(lines[-16:]))
+              p.unlink()
+          PY
+          fi
+          ARTIFACT_ID=$(jq -r '[.artifacts[] | select(.name == "cad-coder-results" and .expired == false)] | sort_by(.id) | last | .id // empty' diagnostics/artifacts.json)
+          if test -n "$ARTIFACT_ID"; then
+            timeout 60s gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" > recovered-artifact.zip 2> diagnostics/artifact-error.txt
+            export RUN_ID
+            python3 - <<'PY'
+          import json,os,stat,zipfile
+          from pathlib import Path,PurePosixPath
+          zpath=Path('recovered-artifact.zip')
+          if zpath.stat().st_size>40*1024*1024: raise RuntimeError('Archive exceeds recovery limit')
+          allowed={'.json','.txt','.log','.png','.step','.stl','.py'}
+          total=0; files=[]
+          with zipfile.ZipFile(zpath) as archive:
+              if len(archive.infolist())>1000: raise RuntimeError('Too many artifact entries')
+              selected=[]
+              for item in archive.infolist():
+                  p=PurePosixPath(item.filename)
+                  if p.is_absolute() or '..' in p.parts or any(x.startswith('.') for x in p.parts): raise RuntimeError('Unsafe artifact path')
+                  if stat.S_ISLNK(item.external_attr>>16): raise RuntimeError('Symlink refused')
+                  if item.is_dir() or p.suffix.lower() not in allowed: continue
+                  total+=item.file_size
+                  if total>30*1024*1024: raise RuntimeError('Recovered output exceeds limit')
+                  selected.append((item,p))
+              root=Path('recovered')/('run-'+os.environ['RUN_ID'])
+              for item,p in selected:
+                  dest=root.joinpath(*p.parts); dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(archive.read(item)); files.append(str(dest))
+          Path('diagnostics/recovery.json').write_text(json.dumps({'run_id':os.environ['RUN_ID'],'files':files,'bytes':total,'model_code_executed':False},indent=2))
+          zpath.unlink()
+          PY
+          else
+            echo 'No unexpired cad-coder-results artifact is currently available.' > diagnostics/no-artifact.txt
+          fi
+      - name: Summarize observed status
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,os,datetime
+          from pathlib import Path
+          d=Path('diagnostics'); d.mkdir(exist_ok=True)
+          def read(name):
+              try: return json.loads((d/name).read_text())
+              except Exception: return None
+          run=read('run.json'); jobs=read('jobs.json'); recovery=read('recovery.json')
+          summary={'observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'target_sha':os.environ['TARGET_SHA'],'observer_run_id':os.environ['GITHUB_RUN_ID'],'model_run_started_by_observer':False,'run':None,'jobs':[],'recovery':recovery}
+          if run: summary['run']={k:run.get(k) for k in ('id','status','conclusion','html_url','run_attempt','created_at','run_started_at','updated_at','head_sha')}
+          if jobs:
+              for j in jobs.get('jobs',[]):
+                  row={k:j.get(k) for k in ('id','name','status','conclusion','started_at','completed_at','html_url')}
+                  row['steps']=[{k:s.get(k) for k in ('number','name','status','conclusion','started_at','completed_at')} for s in j.get('steps',[])]
+                  summary['jobs'].append(row)
+          summary['notes']={p.name:p.read_text(errors='replace')[-3000:] for p in d.glob('*.txt') if p.name in ('no-run.txt','no-artifact.txt','api-error.txt','log-error.txt','artifact-error.txt','error-lines.txt')}
+          (d/'summary.json').write_text(json.dumps(summary,indent=2))
+          PY
+      - name: Publish diagnostics and recovered data only
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- diagnostics
+          if test -d recovered; then git add -- recovered; fi
+          git diff --cached --quiet && exit 0
+          git commit -m 'Inspect existing CAD-Coder run and recover available artifacts'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
