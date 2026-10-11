@@ -1,0 +1,14 @@
+{
+  "model": "CADCODER/CAD-Coder",
+  "variant": "NF4 double-quantized CPU; bfloat16 compute",
+  "prompt": "Generate the CADQuery code needed to create the CAD for the provided image. Just the code, no other words.",
+  "temperature": 0,
+  "max_new_tokens": 3450,
+  "max_seconds_per_case": 900,
+  "status": "generating",
+  "ram_bytes": 16765415424,
+  "free_disk_bytes": 107974844416,
+  "cpu_nf4_and_generation_api_preflight": "passed",
+  "model_revision": "ff60c11d60e839c1da2c4fe445129df7dd89773e",
+  "vision_model": "openai/clip-vit-large-patch14-336"
+}

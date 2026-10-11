@@ -6,14 +6,28 @@
     {
       "name": "mounting-plate",
       "passed": null,
-      "status": "not_run",
-      "reason": "No model generation recorded"
+      "status": "generation_failed_or_capped",
+      "generation": {
+        "status": "failed",
+        "quantization": "NF4",
+        "repair_attempts": 0,
+        "tokens": 10,
+        "ended_with_eos": false,
+        "error": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/bench.py\", line 131, in infer\n    if not result[\"ended_with_eos\"]: raise RuntimeError(\"Generation ended without EOS; incomplete output is not scored\")\nRuntimeError: Generation ended without EOS; incomplete output is not scored\n",
+        "seconds": 944.367
+      },
+      "reason": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/bench.py\", line 131, in infer\n    if not result[\"ended_with_eos\"]: raise RuntimeError(\"Generation ended without EOS; incomplete output is not scored\")\nRuntimeError: Generation ended without EOS; incomplete output is not scored\n"
     },
     {
       "name": "stepped-flange",
       "passed": null,
-      "status": "not_run",
-      "reason": "No model generation recorded"
+      "status": "generation_failed_or_capped",
+      "generation": {
+        "status": "running",
+        "quantization": "NF4",
+        "repair_attempts": 0
+      },
+      "reason": null
     }
   ]
 }
