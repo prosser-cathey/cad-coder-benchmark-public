@@ -52,8 +52,18 @@ jobs:
           git clone --filter=blob:none https://github.com/anniedoris/CAD-Coder.git upstream
           git -C upstream checkout --detach 7f40b4827b029731ef97313a116d62519e313960
           python -u bench.py prepare 2>&1 | tee outputs/prepare.log
-      - name: Build isolated CadQuery executor
-        run: docker build -t cad-executor .
+      - name: Build and verify isolated CadQuery executor
+        run: |
+          set -o pipefail
+          docker build --progress=plain -t cad-executor . 2>&1 | tee outputs/docker-build.log
+          mkdir -p runtime-probe
+          printf 'import cadquery as cq
+          solid = cq.Workplane("XY").box(10,10,2).faces(">Z").workplane().hole(2)
+          ' > runtime-probe/generated.py
+          timeout 90s docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 3g --cpus 2 --ulimit fsize=65536:65536 --tmpfs /tmp:rw,nosuid,size=128m --user "$(id -u):$(id -g)" -v "$PWD/runtime-probe:/work:rw" cad-executor 2>&1 | tee outputs/sandbox-preflight.log
+          test -s runtime-probe/predicted.step
+          test -s runtime-probe/predicted.stl
+          cp runtime-probe/sandbox.json outputs/sandbox-preflight.json
       - name: Run CAD-Coder, one attempt per image
         run: |
           set -o pipefail
