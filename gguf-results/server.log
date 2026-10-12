@@ -1,0 +1,16 @@
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.003.872 I srv  llama_server: initializing ...
+0.00.003.923 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.004.366 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.008.461 I srv    load_model: loading model '/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf-work/language-q4.gguf'
+0.22.346.638 I cmn          init: llama threadpool init, n_threads = 4
+0.56.685.114 W load_tensors: ffn up/down are swapped
+0.59.720.332 I srv    load_model: loaded multimodal model, '/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf-work/mmproj-model-f16.gguf'
+1.02.180.235 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 3072, kv_unified = 'false'
+1.02.196.746 I srv  llama_server: model loaded
+1.02.196.763 I srv  llama_server: listening on http://127.0.0.1:8080
+1.03.054.783 E mtmd_tokenize: error: number of media markers in text (0) does not match number of bitmaps (1)
+1.03.080.086 E mtmd_tokenize: error: number of media markers in text (0) does not match number of bitmaps (1)
+1.03.081.293 I srv    operator(): operator(): cleaning up before exit...

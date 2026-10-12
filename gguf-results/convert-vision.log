@@ -1,0 +1,751 @@
+Projector tensors added
+
+  Converting to float32
+v.class_embd - f32 - shape = (1024,)
+tensor v.patch_embd.weight is always saved in f16
+v.patch_embd.weight - f16 - shape = (1024, 3, 14, 14)
+  Converting to float16
+v.position_embd.weight - f16 - shape = (577, 1024)
+  Converting to float32
+v.pre_ln.weight - f32 - shape = (1024,)
+  Converting to float32
+v.pre_ln.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.0.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.0.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.0.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.0.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.0.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.0.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.0.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.0.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.0.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.0.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.0.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.0.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.0.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.0.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.0.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.0.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.1.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.1.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.1.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.1.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.1.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.1.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.1.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.1.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.1.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.1.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.1.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.1.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.1.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.1.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.1.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.1.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.2.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.2.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.2.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.2.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.2.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.2.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.2.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.2.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.2.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.2.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.2.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.2.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.2.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.2.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.2.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.2.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.3.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.3.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.3.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.3.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.3.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.3.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.3.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.3.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.3.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.3.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.3.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.3.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.3.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.3.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.3.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.3.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.4.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.4.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.4.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.4.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.4.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.4.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.4.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.4.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.4.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.4.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.4.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.4.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.4.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.4.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.4.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.4.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.5.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.5.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.5.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.5.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.5.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.5.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.5.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.5.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.5.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.5.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.5.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.5.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.5.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.5.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.5.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.5.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.6.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.6.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.6.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.6.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.6.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.6.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.6.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.6.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.6.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.6.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.6.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.6.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.6.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.6.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.6.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.6.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.7.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.7.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.7.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.7.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.7.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.7.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.7.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.7.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.7.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.7.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.7.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.7.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.7.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.7.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.7.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.7.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.8.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.8.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.8.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.8.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.8.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.8.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.8.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.8.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.8.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.8.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.8.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.8.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.8.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.8.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.8.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.8.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.9.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.9.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.9.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.9.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.9.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.9.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.9.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.9.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.9.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.9.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.9.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.9.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.9.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.9.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.9.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.9.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.10.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.10.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.10.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.10.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.10.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.10.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.10.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.10.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.10.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.10.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.10.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.10.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.10.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.10.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.10.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.10.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.11.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.11.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.11.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.11.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.11.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.11.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.11.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.11.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.11.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.11.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.11.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.11.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.11.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.11.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.11.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.11.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.12.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.12.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.12.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.12.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.12.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.12.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.12.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.12.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.12.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.12.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.12.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.12.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.12.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.12.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.12.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.12.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.13.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.13.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.13.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.13.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.13.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.13.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.13.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.13.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.13.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.13.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.13.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.13.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.13.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.13.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.13.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.13.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.14.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.14.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.14.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.14.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.14.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.14.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.14.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.14.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.14.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.14.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.14.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.14.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.14.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.14.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.14.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.14.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.15.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.15.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.15.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.15.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.15.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.15.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.15.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.15.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.15.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.15.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.15.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.15.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.15.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.15.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.15.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.15.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.16.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.16.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.16.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.16.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.16.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.16.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.16.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.16.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.16.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.16.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.16.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.16.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.16.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.16.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.16.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.16.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.17.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.17.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.17.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.17.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.17.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.17.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.17.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.17.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.17.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.17.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.17.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.17.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.17.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.17.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.17.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.17.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.18.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.18.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.18.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.18.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.18.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.18.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.18.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.18.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.18.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.18.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.18.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.18.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.18.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.18.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.18.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.18.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.19.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.19.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.19.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.19.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.19.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.19.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.19.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.19.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.19.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.19.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.19.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.19.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.19.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.19.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.19.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.19.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.20.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.20.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.20.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.20.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.20.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.20.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.20.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.20.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.20.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.20.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.20.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.20.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.20.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.20.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.20.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.20.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.21.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.21.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.21.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.21.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.21.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.21.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.21.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.21.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.21.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.21.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.21.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.21.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.21.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.21.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.21.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.21.ln2.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.22.attn_k.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.22.attn_k.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.22.attn_v.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.22.attn_v.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.22.attn_q.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.22.attn_q.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.22.attn_out.weight - f16 - shape = (1024, 1024)
+  Converting to float32
+v.blk.22.attn_out.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.22.ln1.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.22.ln1.bias - f32 - shape = (1024,)
+  Converting to float16
+v.blk.22.ffn_down.weight - f16 - shape = (4096, 1024)
+  Converting to float32
+v.blk.22.ffn_down.bias - f32 - shape = (4096,)
+  Converting to float16
+v.blk.22.ffn_up.weight - f16 - shape = (1024, 4096)
+  Converting to float32
+v.blk.22.ffn_up.bias - f32 - shape = (1024,)
+  Converting to float32
+v.blk.22.ln2.weight - f32 - shape = (1024,)
+  Converting to float32
+v.blk.22.ln2.bias - f32 - shape = (1024,)
+skipping parameter: vision_model.post_layernorm.weight
+skipping parameter: vision_model.post_layernorm.bias
+Done. Output file: /home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf-work/mmproj-model-f16.gguf

@@ -1,0 +1,15 @@
+{
+  "model": "CADCODER/CAD-Coder",
+  "revision": "ff60c11d60e839c1da2c4fe445129df7dd89773e",
+  "converter": "9b61acf06041dcbaff6afa5f28940e93297f8520",
+  "runtime": "f2cc7282ce0042641df55e0e563b75e824e2b647",
+  "stage": "ready",
+  "engine": "llama.cpp Q4_K_M CPU",
+  "context": 3072,
+  "max_tokens": 2048,
+  "vision_tensors": 391,
+  "projector_tensors": 4,
+  "vision_config_revision": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+  "language_bytes": 7865956576,
+  "vision_bytes": 645414112
+}

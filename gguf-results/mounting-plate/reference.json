@@ -1,0 +1,17 @@
+{
+  "geometry": {
+    "valid": true,
+    "solids": 1,
+    "aspect": [
+      1.0,
+      0.550000011920929,
+      0.10000000149011612
+    ],
+    "volume": 0.05192307818297152,
+    "watertight": true,
+    "euler": -2
+  },
+  "input_sha256": "ada2384756b448b4ce44c88243d999d4b5aac9ac150efb6f533a02d295dc8094",
+  "matches_original_input_bytes": true,
+  "expected_sha256": "ada2384756b448b4ce44c88243d999d4b5aac9ac150efb6f533a02d295dc8094"
+}
