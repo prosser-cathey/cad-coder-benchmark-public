@@ -3,5 +3,6 @@
   "revision": "ff60c11d60e839c1da2c4fe445129df7dd89773e",
   "backend": "llama.cpp",
   "quantization": "Q4_K_M",
+  "request_api": "native /completions",
   "status": "finished"
 }

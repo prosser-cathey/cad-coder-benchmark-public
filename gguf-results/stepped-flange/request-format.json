@@ -1,0 +1,8 @@
+{
+  "endpoint": "/completions",
+  "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: <__media_amMhIjFhuNVvHo5Np4AQ8mztjZEwjIo6__>\nGenerate the CADQuery code needed to create the CAD for the provided image. Just the code, no other words. ASSISTANT:",
+  "image_count": 1,
+  "marker_count": 1,
+  "input_sha256": "39ab4a8c78b4bc42bf61aebe7e6fc6c05fb0235b44212896382d6b38f79a21f3",
+  "n_predict": 2048
+}

@@ -397,5 +397,5 @@ llama_model_loader: - type  f16:  282 tensors
 llama_model_quantize_impl: model size  = 24826.58 MiB (16.00 BPW)
 llama_model_quantize_impl: quant size  =  7500.85 MiB (4.83 BPW)
 
-llama_quantize: quantize time = 398190.84 ms
-llama_quantize:    total time = 398190.84 ms
+llama_quantize: quantize time = 297560.87 ms
+llama_quantize:    total time = 297560.87 ms

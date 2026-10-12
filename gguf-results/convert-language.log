@@ -417,22 +417,22 @@ INFO:gguf.gguf_writer:Writing the following files:
 INFO:gguf.gguf_writer:/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf-work/language-f16.gguf: n_tensors = 363, total_size = 26.0G
 INFO:convert:[  1/363] Writing tensor token_embd.weight                      | size  32000 x   5120  | type F16  | T+   1
 INFO:convert:[  2/363] Writing tensor blk.0.attn_norm.weight                 | size   5120           | type F32  | T+   1
-INFO:convert:[  3/363] Writing tensor blk.0.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+   2
-INFO:convert:[  4/363] Writing tensor blk.0.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+   2
-INFO:convert:[  5/363] Writing tensor blk.0.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+   3
-INFO:convert:[  6/363] Writing tensor blk.0.ffn_norm.weight                  | size   5120           | type F32  | T+   3
-INFO:convert:[  7/363] Writing tensor blk.0.attn_k.weight                    | size   5120 x   5120  | type F16  | T+   3
-INFO:convert:[  8/363] Writing tensor blk.0.attn_output.weight               | size   5120 x   5120  | type F16  | T+   3
+INFO:convert:[  3/363] Writing tensor blk.0.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+   1
+INFO:convert:[  4/363] Writing tensor blk.0.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+   1
+INFO:convert:[  5/363] Writing tensor blk.0.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+   2
+INFO:convert:[  6/363] Writing tensor blk.0.ffn_norm.weight                  | size   5120           | type F32  | T+   2
+INFO:convert:[  7/363] Writing tensor blk.0.attn_k.weight                    | size   5120 x   5120  | type F16  | T+   2
+INFO:convert:[  8/363] Writing tensor blk.0.attn_output.weight               | size   5120 x   5120  | type F16  | T+   2
 INFO:convert:[  9/363] Writing tensor blk.0.attn_q.weight                    | size   5120 x   5120  | type F16  | T+   3
 INFO:convert:[ 10/363] Writing tensor blk.0.attn_v.weight                    | size   5120 x   5120  | type F16  | T+   3
 INFO:convert:[ 11/363] Writing tensor blk.1.attn_norm.weight                 | size   5120           | type F32  | T+   3
-INFO:convert:[ 12/363] Writing tensor blk.1.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+   4
+INFO:convert:[ 12/363] Writing tensor blk.1.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+   3
 INFO:convert:[ 13/363] Writing tensor blk.1.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+   4
 INFO:convert:[ 14/363] Writing tensor blk.1.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+   5
 INFO:convert:[ 15/363] Writing tensor blk.1.ffn_norm.weight                  | size   5120           | type F32  | T+   5
 INFO:convert:[ 16/363] Writing tensor blk.1.attn_k.weight                    | size   5120 x   5120  | type F16  | T+   5
 INFO:convert:[ 17/363] Writing tensor blk.1.attn_output.weight               | size   5120 x   5120  | type F16  | T+   5
-INFO:convert:[ 18/363] Writing tensor blk.1.attn_q.weight                    | size   5120 x   5120  | type F16  | T+   6
+INFO:convert:[ 18/363] Writing tensor blk.1.attn_q.weight                    | size   5120 x   5120  | type F16  | T+   5
 INFO:convert:[ 19/363] Writing tensor blk.1.attn_v.weight                    | size   5120 x   5120  | type F16  | T+   6
 INFO:convert:[ 20/363] Writing tensor blk.2.attn_norm.weight                 | size   5120           | type F32  | T+   6
 INFO:convert:[ 21/363] Writing tensor blk.2.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+   6
@@ -440,309 +440,309 @@ INFO:convert:[ 22/363] Writing tensor blk.2.ffn_gate.weight                  | s
 INFO:convert:[ 23/363] Writing tensor blk.2.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+   8
 INFO:convert:[ 24/363] Writing tensor blk.2.ffn_norm.weight                  | size   5120           | type F32  | T+   8
 INFO:convert:[ 25/363] Writing tensor blk.2.attn_k.weight                    | size   5120 x   5120  | type F16  | T+   8
-INFO:convert:[ 26/363] Writing tensor blk.2.attn_output.weight               | size   5120 x   5120  | type F16  | T+   8
+INFO:convert:[ 26/363] Writing tensor blk.2.attn_output.weight               | size   5120 x   5120  | type F16  | T+   9
 INFO:convert:[ 27/363] Writing tensor blk.2.attn_q.weight                    | size   5120 x   5120  | type F16  | T+   9
 INFO:convert:[ 28/363] Writing tensor blk.2.attn_v.weight                    | size   5120 x   5120  | type F16  | T+   9
-INFO:convert:[ 29/363] Writing tensor blk.3.attn_norm.weight                 | size   5120           | type F32  | T+   9
+INFO:convert:[ 29/363] Writing tensor blk.3.attn_norm.weight                 | size   5120           | type F32  | T+  10
 INFO:convert:[ 30/363] Writing tensor blk.3.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  10
 INFO:convert:[ 31/363] Writing tensor blk.3.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  11
-INFO:convert:[ 32/363] Writing tensor blk.3.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  11
+INFO:convert:[ 32/363] Writing tensor blk.3.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  12
 INFO:convert:[ 33/363] Writing tensor blk.3.ffn_norm.weight                  | size   5120           | type F32  | T+  12
 INFO:convert:[ 34/363] Writing tensor blk.3.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  12
-INFO:convert:[ 35/363] Writing tensor blk.3.attn_output.weight               | size   5120 x   5120  | type F16  | T+  12
-INFO:convert:[ 36/363] Writing tensor blk.3.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  12
+INFO:convert:[ 35/363] Writing tensor blk.3.attn_output.weight               | size   5120 x   5120  | type F16  | T+  13
+INFO:convert:[ 36/363] Writing tensor blk.3.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  13
 INFO:convert:[ 37/363] Writing tensor blk.3.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  13
 INFO:convert:[ 38/363] Writing tensor blk.4.attn_norm.weight                 | size   5120           | type F32  | T+  13
-INFO:convert:[ 39/363] Writing tensor blk.4.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  13
+INFO:convert:[ 39/363] Writing tensor blk.4.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  14
 INFO:convert:[ 40/363] Writing tensor blk.4.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  15
-INFO:convert:[ 41/363] Writing tensor blk.4.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  15
+INFO:convert:[ 41/363] Writing tensor blk.4.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  16
 INFO:convert:[ 42/363] Writing tensor blk.4.ffn_norm.weight                  | size   5120           | type F32  | T+  16
 INFO:convert:[ 43/363] Writing tensor blk.4.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  16
-INFO:convert:[ 44/363] Writing tensor blk.4.attn_output.weight               | size   5120 x   5120  | type F16  | T+  16
-INFO:convert:[ 45/363] Writing tensor blk.4.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  16
+INFO:convert:[ 44/363] Writing tensor blk.4.attn_output.weight               | size   5120 x   5120  | type F16  | T+  17
+INFO:convert:[ 45/363] Writing tensor blk.4.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  17
 INFO:convert:[ 46/363] Writing tensor blk.4.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  17
-INFO:convert:[ 47/363] Writing tensor blk.5.attn_norm.weight                 | size   5120           | type F32  | T+  17
-INFO:convert:[ 48/363] Writing tensor blk.5.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  17
-INFO:convert:[ 49/363] Writing tensor blk.5.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  18
-INFO:convert:[ 50/363] Writing tensor blk.5.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  19
-INFO:convert:[ 51/363] Writing tensor blk.5.ffn_norm.weight                  | size   5120           | type F32  | T+  19
-INFO:convert:[ 52/363] Writing tensor blk.5.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  20
-INFO:convert:[ 53/363] Writing tensor blk.5.attn_output.weight               | size   5120 x   5120  | type F16  | T+  20
-INFO:convert:[ 54/363] Writing tensor blk.5.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  20
-INFO:convert:[ 55/363] Writing tensor blk.5.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  21
-INFO:convert:[ 56/363] Writing tensor blk.6.attn_norm.weight                 | size   5120           | type F32  | T+  21
-INFO:convert:[ 57/363] Writing tensor blk.6.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  21
-INFO:convert:[ 58/363] Writing tensor blk.6.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  22
-INFO:convert:[ 59/363] Writing tensor blk.6.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  23
-INFO:convert:[ 60/363] Writing tensor blk.6.ffn_norm.weight                  | size   5120           | type F32  | T+  23
-INFO:convert:[ 61/363] Writing tensor blk.6.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  24
-INFO:convert:[ 62/363] Writing tensor blk.6.attn_output.weight               | size   5120 x   5120  | type F16  | T+  24
-INFO:convert:[ 63/363] Writing tensor blk.6.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  24
-INFO:convert:[ 64/363] Writing tensor blk.6.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  24
-INFO:convert:[ 65/363] Writing tensor blk.7.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  25
-INFO:convert:[ 66/363] Writing tensor blk.7.attn_output.weight               | size   5120 x   5120  | type F16  | T+  25
-INFO:convert:[ 67/363] Writing tensor blk.7.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  25
-INFO:convert:[ 68/363] Writing tensor blk.7.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  26
-INFO:convert:[ 69/363] Writing tensor blk.10.attn_norm.weight                | size   5120           | type F32  | T+  26
-INFO:convert:[ 70/363] Writing tensor blk.10.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  27
-INFO:convert:[ 71/363] Writing tensor blk.10.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  27
-INFO:convert:[ 72/363] Writing tensor blk.10.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  28
-INFO:convert:[ 73/363] Writing tensor blk.10.ffn_norm.weight                 | size   5120           | type F32  | T+  29
-INFO:convert:[ 74/363] Writing tensor blk.10.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  29
-INFO:convert:[ 75/363] Writing tensor blk.10.attn_output.weight              | size   5120 x   5120  | type F16  | T+  29
-INFO:convert:[ 76/363] Writing tensor blk.10.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  29
-INFO:convert:[ 77/363] Writing tensor blk.10.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  30
-INFO:convert:[ 78/363] Writing tensor blk.11.attn_norm.weight                | size   5120           | type F32  | T+  30
-INFO:convert:[ 79/363] Writing tensor blk.11.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  30
-INFO:convert:[ 80/363] Writing tensor blk.11.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  31
-INFO:convert:[ 81/363] Writing tensor blk.11.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  32
-INFO:convert:[ 82/363] Writing tensor blk.11.ffn_norm.weight                 | size   5120           | type F32  | T+  33
-INFO:convert:[ 83/363] Writing tensor blk.11.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  33
-INFO:convert:[ 84/363] Writing tensor blk.11.attn_output.weight              | size   5120 x   5120  | type F16  | T+  33
-INFO:convert:[ 85/363] Writing tensor blk.11.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  33
-INFO:convert:[ 86/363] Writing tensor blk.11.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  34
-INFO:convert:[ 87/363] Writing tensor blk.12.attn_norm.weight                | size   5120           | type F32  | T+  34
-INFO:convert:[ 88/363] Writing tensor blk.12.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  35
-INFO:convert:[ 89/363] Writing tensor blk.12.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  35
-INFO:convert:[ 90/363] Writing tensor blk.12.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  36
-INFO:convert:[ 91/363] Writing tensor blk.12.ffn_norm.weight                 | size   5120           | type F32  | T+  37
-INFO:convert:[ 92/363] Writing tensor blk.12.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  37
-INFO:convert:[ 93/363] Writing tensor blk.12.attn_output.weight              | size   5120 x   5120  | type F16  | T+  37
-INFO:convert:[ 94/363] Writing tensor blk.12.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  37
-INFO:convert:[ 95/363] Writing tensor blk.12.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  38
-INFO:convert:[ 96/363] Writing tensor blk.13.attn_norm.weight                | size   5120           | type F32  | T+  38
-INFO:convert:[ 97/363] Writing tensor blk.13.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  39
-INFO:convert:[ 98/363] Writing tensor blk.13.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  39
-INFO:convert:[ 99/363] Writing tensor blk.13.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  40
-INFO:convert:[100/363] Writing tensor blk.13.ffn_norm.weight                 | size   5120           | type F32  | T+  40
-INFO:convert:[101/363] Writing tensor blk.13.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  41
-INFO:convert:[102/363] Writing tensor blk.13.attn_output.weight              | size   5120 x   5120  | type F16  | T+  41
-INFO:convert:[103/363] Writing tensor blk.13.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  41
-INFO:convert:[104/363] Writing tensor blk.13.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  42
-INFO:convert:[105/363] Writing tensor blk.14.attn_norm.weight                | size   5120           | type F32  | T+  42
-INFO:convert:[106/363] Writing tensor blk.14.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  42
-INFO:convert:[107/363] Writing tensor blk.14.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  43
-INFO:convert:[108/363] Writing tensor blk.14.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  44
-INFO:convert:[109/363] Writing tensor blk.14.ffn_norm.weight                 | size   5120           | type F32  | T+  45
-INFO:convert:[110/363] Writing tensor blk.14.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  45
-INFO:convert:[111/363] Writing tensor blk.14.attn_output.weight              | size   5120 x   5120  | type F16  | T+  45
-INFO:convert:[112/363] Writing tensor blk.14.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  45
-INFO:convert:[113/363] Writing tensor blk.14.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  46
-INFO:convert:[114/363] Writing tensor blk.15.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  46
-INFO:convert:[115/363] Writing tensor blk.15.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  48
-INFO:convert:[116/363] Writing tensor blk.7.attn_norm.weight                 | size   5120           | type F32  | T+  48
-INFO:convert:[117/363] Writing tensor blk.7.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  49
+INFO:convert:[ 47/363] Writing tensor blk.5.attn_norm.weight                 | size   5120           | type F32  | T+  18
+INFO:convert:[ 48/363] Writing tensor blk.5.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  18
+INFO:convert:[ 49/363] Writing tensor blk.5.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  19
+INFO:convert:[ 50/363] Writing tensor blk.5.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  20
+INFO:convert:[ 51/363] Writing tensor blk.5.ffn_norm.weight                  | size   5120           | type F32  | T+  21
+INFO:convert:[ 52/363] Writing tensor blk.5.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  21
+INFO:convert:[ 53/363] Writing tensor blk.5.attn_output.weight               | size   5120 x   5120  | type F16  | T+  21
+INFO:convert:[ 54/363] Writing tensor blk.5.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  21
+INFO:convert:[ 55/363] Writing tensor blk.5.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  22
+INFO:convert:[ 56/363] Writing tensor blk.6.attn_norm.weight                 | size   5120           | type F32  | T+  22
+INFO:convert:[ 57/363] Writing tensor blk.6.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  22
+INFO:convert:[ 58/363] Writing tensor blk.6.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  23
+INFO:convert:[ 59/363] Writing tensor blk.6.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  25
+INFO:convert:[ 60/363] Writing tensor blk.6.ffn_norm.weight                  | size   5120           | type F32  | T+  25
+INFO:convert:[ 61/363] Writing tensor blk.6.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  25
+INFO:convert:[ 62/363] Writing tensor blk.6.attn_output.weight               | size   5120 x   5120  | type F16  | T+  25
+INFO:convert:[ 63/363] Writing tensor blk.6.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  26
+INFO:convert:[ 64/363] Writing tensor blk.6.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  26
+INFO:convert:[ 65/363] Writing tensor blk.7.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  26
+INFO:convert:[ 66/363] Writing tensor blk.7.attn_output.weight               | size   5120 x   5120  | type F16  | T+  27
+INFO:convert:[ 67/363] Writing tensor blk.7.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  27
+INFO:convert:[ 68/363] Writing tensor blk.7.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  27
+INFO:convert:[ 69/363] Writing tensor blk.10.attn_norm.weight                | size   5120           | type F32  | T+  28
+INFO:convert:[ 70/363] Writing tensor blk.10.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  28
+INFO:convert:[ 71/363] Writing tensor blk.10.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  29
+INFO:convert:[ 72/363] Writing tensor blk.10.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  30
+INFO:convert:[ 73/363] Writing tensor blk.10.ffn_norm.weight                 | size   5120           | type F32  | T+  30
+INFO:convert:[ 74/363] Writing tensor blk.10.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  31
+INFO:convert:[ 75/363] Writing tensor blk.10.attn_output.weight              | size   5120 x   5120  | type F16  | T+  31
+INFO:convert:[ 76/363] Writing tensor blk.10.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  31
+INFO:convert:[ 77/363] Writing tensor blk.10.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  32
+INFO:convert:[ 78/363] Writing tensor blk.11.attn_norm.weight                | size   5120           | type F32  | T+  32
+INFO:convert:[ 79/363] Writing tensor blk.11.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  32
+INFO:convert:[ 80/363] Writing tensor blk.11.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  33
+INFO:convert:[ 81/363] Writing tensor blk.11.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  34
+INFO:convert:[ 82/363] Writing tensor blk.11.ffn_norm.weight                 | size   5120           | type F32  | T+  35
+INFO:convert:[ 83/363] Writing tensor blk.11.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  35
+INFO:convert:[ 84/363] Writing tensor blk.11.attn_output.weight              | size   5120 x   5120  | type F16  | T+  35
+INFO:convert:[ 85/363] Writing tensor blk.11.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  35
+INFO:convert:[ 86/363] Writing tensor blk.11.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  36
+INFO:convert:[ 87/363] Writing tensor blk.12.attn_norm.weight                | size   5120           | type F32  | T+  36
+INFO:convert:[ 88/363] Writing tensor blk.12.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  37
+INFO:convert:[ 89/363] Writing tensor blk.12.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  37
+INFO:convert:[ 90/363] Writing tensor blk.12.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  38
+INFO:convert:[ 91/363] Writing tensor blk.12.ffn_norm.weight                 | size   5120           | type F32  | T+  39
+INFO:convert:[ 92/363] Writing tensor blk.12.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  39
+INFO:convert:[ 93/363] Writing tensor blk.12.attn_output.weight              | size   5120 x   5120  | type F16  | T+  39
+INFO:convert:[ 94/363] Writing tensor blk.12.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  39
+INFO:convert:[ 95/363] Writing tensor blk.12.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  40
+INFO:convert:[ 96/363] Writing tensor blk.13.attn_norm.weight                | size   5120           | type F32  | T+  40
+INFO:convert:[ 97/363] Writing tensor blk.13.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  40
+INFO:convert:[ 98/363] Writing tensor blk.13.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  41
+INFO:convert:[ 99/363] Writing tensor blk.13.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  42
+INFO:convert:[100/363] Writing tensor blk.13.ffn_norm.weight                 | size   5120           | type F32  | T+  43
+INFO:convert:[101/363] Writing tensor blk.13.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  43
+INFO:convert:[102/363] Writing tensor blk.13.attn_output.weight              | size   5120 x   5120  | type F16  | T+  43
+INFO:convert:[103/363] Writing tensor blk.13.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  43
+INFO:convert:[104/363] Writing tensor blk.13.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  44
+INFO:convert:[105/363] Writing tensor blk.14.attn_norm.weight                | size   5120           | type F32  | T+  44
+INFO:convert:[106/363] Writing tensor blk.14.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  44
+INFO:convert:[107/363] Writing tensor blk.14.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  45
+INFO:convert:[108/363] Writing tensor blk.14.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  47
+INFO:convert:[109/363] Writing tensor blk.14.ffn_norm.weight                 | size   5120           | type F32  | T+  47
+INFO:convert:[110/363] Writing tensor blk.14.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  47
+INFO:convert:[111/363] Writing tensor blk.14.attn_output.weight              | size   5120 x   5120  | type F16  | T+  47
+INFO:convert:[112/363] Writing tensor blk.14.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  48
+INFO:convert:[113/363] Writing tensor blk.14.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  48
+INFO:convert:[114/363] Writing tensor blk.15.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  48
+INFO:convert:[115/363] Writing tensor blk.15.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  49
+INFO:convert:[116/363] Writing tensor blk.7.attn_norm.weight                 | size   5120           | type F32  | T+  49
+INFO:convert:[117/363] Writing tensor blk.7.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  50
 INFO:convert:[118/363] Writing tensor blk.7.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  51
-INFO:convert:[119/363] Writing tensor blk.7.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  62
-INFO:convert:[120/363] Writing tensor blk.7.ffn_norm.weight                  | size   5120           | type F32  | T+  62
-INFO:convert:[121/363] Writing tensor blk.8.attn_norm.weight                 | size   5120           | type F32  | T+  62
-INFO:convert:[122/363] Writing tensor blk.8.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  63
-INFO:convert:[123/363] Writing tensor blk.8.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  66
-INFO:convert:[124/363] Writing tensor blk.8.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  68
-INFO:convert:[125/363] Writing tensor blk.8.ffn_norm.weight                  | size   5120           | type F32  | T+  68
-INFO:convert:[126/363] Writing tensor blk.8.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  68
-INFO:convert:[127/363] Writing tensor blk.8.attn_output.weight               | size   5120 x   5120  | type F16  | T+  68
-INFO:convert:[128/363] Writing tensor blk.8.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  69
-INFO:convert:[129/363] Writing tensor blk.8.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  69
-INFO:convert:[130/363] Writing tensor blk.9.attn_norm.weight                 | size   5120           | type F32  | T+  69
-INFO:convert:[131/363] Writing tensor blk.9.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  69
-INFO:convert:[132/363] Writing tensor blk.9.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  70
-INFO:convert:[133/363] Writing tensor blk.9.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  70
-INFO:convert:[134/363] Writing tensor blk.9.ffn_norm.weight                  | size   5120           | type F32  | T+  71
-INFO:convert:[135/363] Writing tensor blk.9.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  71
-INFO:convert:[136/363] Writing tensor blk.9.attn_output.weight               | size   5120 x   5120  | type F16  | T+  71
-INFO:convert:[137/363] Writing tensor blk.9.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  71
-INFO:convert:[138/363] Writing tensor blk.9.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  71
-INFO:convert:[139/363] Writing tensor blk.15.attn_norm.weight                | size   5120           | type F32  | T+  71
-INFO:convert:[140/363] Writing tensor blk.15.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  72
-INFO:convert:[141/363] Writing tensor blk.15.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  72
-INFO:convert:[142/363] Writing tensor blk.15.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  73
-INFO:convert:[143/363] Writing tensor blk.15.ffn_norm.weight                 | size   5120           | type F32  | T+  73
-INFO:convert:[144/363] Writing tensor blk.15.attn_output.weight              | size   5120 x   5120  | type F16  | T+  73
-INFO:convert:[145/363] Writing tensor blk.15.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  73
-INFO:convert:[146/363] Writing tensor blk.16.attn_norm.weight                | size   5120           | type F32  | T+  73
-INFO:convert:[147/363] Writing tensor blk.16.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  74
-INFO:convert:[148/363] Writing tensor blk.16.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  74
-INFO:convert:[149/363] Writing tensor blk.16.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  75
-INFO:convert:[150/363] Writing tensor blk.16.ffn_norm.weight                 | size   5120           | type F32  | T+  75
-INFO:convert:[151/363] Writing tensor blk.16.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  75
-INFO:convert:[152/363] Writing tensor blk.16.attn_output.weight              | size   5120 x   5120  | type F16  | T+  75
-INFO:convert:[153/363] Writing tensor blk.16.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  75
-INFO:convert:[154/363] Writing tensor blk.16.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  75
-INFO:convert:[155/363] Writing tensor blk.17.attn_norm.weight                | size   5120           | type F32  | T+  75
-INFO:convert:[156/363] Writing tensor blk.17.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  76
-INFO:convert:[157/363] Writing tensor blk.17.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  76
-INFO:convert:[158/363] Writing tensor blk.17.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  77
-INFO:convert:[159/363] Writing tensor blk.17.ffn_norm.weight                 | size   5120           | type F32  | T+  77
-INFO:convert:[160/363] Writing tensor blk.17.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  77
-INFO:convert:[161/363] Writing tensor blk.17.attn_output.weight              | size   5120 x   5120  | type F16  | T+  77
-INFO:convert:[162/363] Writing tensor blk.17.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  78
-INFO:convert:[163/363] Writing tensor blk.17.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  78
-INFO:convert:[164/363] Writing tensor blk.18.attn_norm.weight                | size   5120           | type F32  | T+  78
-INFO:convert:[165/363] Writing tensor blk.18.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  78
-INFO:convert:[166/363] Writing tensor blk.18.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  79
-INFO:convert:[167/363] Writing tensor blk.18.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  80
-INFO:convert:[168/363] Writing tensor blk.18.ffn_norm.weight                 | size   5120           | type F32  | T+  80
-INFO:convert:[169/363] Writing tensor blk.18.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  81
-INFO:convert:[170/363] Writing tensor blk.18.attn_output.weight              | size   5120 x   5120  | type F16  | T+  81
-INFO:convert:[171/363] Writing tensor blk.18.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  81
-INFO:convert:[172/363] Writing tensor blk.18.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  81
-INFO:convert:[173/363] Writing tensor blk.19.attn_norm.weight                | size   5120           | type F32  | T+  81
-INFO:convert:[174/363] Writing tensor blk.19.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  82
-INFO:convert:[175/363] Writing tensor blk.19.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  82
-INFO:convert:[176/363] Writing tensor blk.19.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  83
-INFO:convert:[177/363] Writing tensor blk.19.ffn_norm.weight                 | size   5120           | type F32  | T+  83
-INFO:convert:[178/363] Writing tensor blk.19.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  84
-INFO:convert:[179/363] Writing tensor blk.19.attn_output.weight              | size   5120 x   5120  | type F16  | T+  84
-INFO:convert:[180/363] Writing tensor blk.19.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  84
-INFO:convert:[181/363] Writing tensor blk.19.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  84
-INFO:convert:[182/363] Writing tensor blk.20.attn_norm.weight                | size   5120           | type F32  | T+  85
-INFO:convert:[183/363] Writing tensor blk.20.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  86
-INFO:convert:[184/363] Writing tensor blk.20.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  89
-INFO:convert:[185/363] Writing tensor blk.20.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  90
-INFO:convert:[186/363] Writing tensor blk.20.ffn_norm.weight                 | size   5120           | type F32  | T+  90
-INFO:convert:[187/363] Writing tensor blk.20.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  90
-INFO:convert:[188/363] Writing tensor blk.20.attn_output.weight              | size   5120 x   5120  | type F16  | T+  91
-INFO:convert:[189/363] Writing tensor blk.20.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  91
-INFO:convert:[190/363] Writing tensor blk.20.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  91
-INFO:convert:[191/363] Writing tensor blk.21.attn_norm.weight                | size   5120           | type F32  | T+  91
-INFO:convert:[192/363] Writing tensor blk.21.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  92
-INFO:convert:[193/363] Writing tensor blk.21.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  93
-INFO:convert:[194/363] Writing tensor blk.21.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  93
-INFO:convert:[195/363] Writing tensor blk.21.ffn_norm.weight                 | size   5120           | type F32  | T+  94
-INFO:convert:[196/363] Writing tensor blk.21.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  94
-INFO:convert:[197/363] Writing tensor blk.21.attn_output.weight              | size   5120 x   5120  | type F16  | T+  94
-INFO:convert:[198/363] Writing tensor blk.21.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  94
-INFO:convert:[199/363] Writing tensor blk.21.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  94
-INFO:convert:[200/363] Writing tensor blk.22.attn_norm.weight                | size   5120           | type F32  | T+  94
-INFO:convert:[201/363] Writing tensor blk.22.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  95
-INFO:convert:[202/363] Writing tensor blk.22.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  99
-INFO:convert:[203/363] Writing tensor blk.22.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 100
-INFO:convert:[204/363] Writing tensor blk.22.ffn_norm.weight                 | size   5120           | type F32  | T+ 100
-INFO:convert:[205/363] Writing tensor blk.22.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 100
-INFO:convert:[206/363] Writing tensor blk.22.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 100
-INFO:convert:[207/363] Writing tensor blk.22.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 100
-INFO:convert:[208/363] Writing tensor blk.22.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 100
-INFO:convert:[209/363] Writing tensor blk.23.attn_norm.weight                | size   5120           | type F32  | T+ 101
-INFO:convert:[210/363] Writing tensor blk.23.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 101
-INFO:convert:[211/363] Writing tensor blk.23.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 102
-INFO:convert:[212/363] Writing tensor blk.23.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 102
-INFO:convert:[213/363] Writing tensor blk.23.ffn_norm.weight                 | size   5120           | type F32  | T+ 102
-INFO:convert:[214/363] Writing tensor blk.23.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 102
-INFO:convert:[215/363] Writing tensor blk.23.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 103
-INFO:convert:[216/363] Writing tensor blk.23.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 103
-INFO:convert:[217/363] Writing tensor blk.23.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 103
-INFO:convert:[218/363] Writing tensor blk.24.attn_norm.weight                | size   5120           | type F32  | T+ 103
-INFO:convert:[219/363] Writing tensor blk.24.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 105
-INFO:convert:[220/363] Writing tensor blk.24.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 106
-INFO:convert:[221/363] Writing tensor blk.24.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 107
-INFO:convert:[222/363] Writing tensor blk.24.ffn_norm.weight                 | size   5120           | type F32  | T+ 107
-INFO:convert:[223/363] Writing tensor blk.24.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 107
-INFO:convert:[224/363] Writing tensor blk.24.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 107
-INFO:convert:[225/363] Writing tensor blk.24.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 107
-INFO:convert:[226/363] Writing tensor blk.24.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 108
-INFO:convert:[227/363] Writing tensor blk.25.attn_norm.weight                | size   5120           | type F32  | T+ 108
-INFO:convert:[228/363] Writing tensor blk.25.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 109
-INFO:convert:[229/363] Writing tensor blk.25.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 111
-INFO:convert:[230/363] Writing tensor blk.25.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 111
-INFO:convert:[231/363] Writing tensor blk.25.ffn_norm.weight                 | size   5120           | type F32  | T+ 111
-INFO:convert:[232/363] Writing tensor blk.25.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 112
-INFO:convert:[233/363] Writing tensor blk.25.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 112
-INFO:convert:[234/363] Writing tensor blk.25.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 112
-INFO:convert:[235/363] Writing tensor blk.25.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 112
-INFO:convert:[236/363] Writing tensor blk.26.attn_norm.weight                | size   5120           | type F32  | T+ 112
-INFO:convert:[237/363] Writing tensor blk.26.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 113
-INFO:convert:[238/363] Writing tensor blk.26.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 114
-INFO:convert:[239/363] Writing tensor blk.26.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 114
-INFO:convert:[240/363] Writing tensor blk.26.ffn_norm.weight                 | size   5120           | type F32  | T+ 115
-INFO:convert:[241/363] Writing tensor blk.26.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 115
-INFO:convert:[242/363] Writing tensor blk.26.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 115
-INFO:convert:[243/363] Writing tensor blk.26.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 115
-INFO:convert:[244/363] Writing tensor blk.26.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 115
-INFO:convert:[245/363] Writing tensor blk.27.attn_norm.weight                | size   5120           | type F32  | T+ 116
-INFO:convert:[246/363] Writing tensor blk.27.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 116
-INFO:convert:[247/363] Writing tensor blk.27.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 117
-INFO:convert:[248/363] Writing tensor blk.27.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 118
-INFO:convert:[249/363] Writing tensor blk.27.ffn_norm.weight                 | size   5120           | type F32  | T+ 118
-INFO:convert:[250/363] Writing tensor blk.27.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 118
-INFO:convert:[251/363] Writing tensor blk.27.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 118
-INFO:convert:[252/363] Writing tensor blk.27.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 118
-INFO:convert:[253/363] Writing tensor blk.27.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 119
-INFO:convert:[254/363] Writing tensor blk.28.attn_norm.weight                | size   5120           | type F32  | T+ 119
-INFO:convert:[255/363] Writing tensor blk.28.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 120
-INFO:convert:[256/363] Writing tensor blk.28.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 120
-INFO:convert:[257/363] Writing tensor blk.28.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 121
-INFO:convert:[258/363] Writing tensor blk.28.ffn_norm.weight                 | size   5120           | type F32  | T+ 122
-INFO:convert:[259/363] Writing tensor blk.28.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 122
-INFO:convert:[260/363] Writing tensor blk.28.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 122
-INFO:convert:[261/363] Writing tensor blk.28.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 122
-INFO:convert:[262/363] Writing tensor blk.28.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 123
-INFO:convert:[263/363] Writing tensor blk.29.attn_norm.weight                | size   5120           | type F32  | T+ 123
-INFO:convert:[264/363] Writing tensor blk.29.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 124
-INFO:convert:[265/363] Writing tensor blk.29.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 124
-INFO:convert:[266/363] Writing tensor blk.29.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 125
-INFO:convert:[267/363] Writing tensor blk.29.ffn_norm.weight                 | size   5120           | type F32  | T+ 126
-INFO:convert:[268/363] Writing tensor blk.29.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 126
-INFO:convert:[269/363] Writing tensor blk.29.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 126
-INFO:convert:[270/363] Writing tensor blk.29.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 126
-INFO:convert:[271/363] Writing tensor blk.29.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 127
-INFO:convert:[272/363] Writing tensor blk.30.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 127
-INFO:convert:[273/363] Writing tensor blk.30.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 128
-INFO:convert:[274/363] Writing tensor blk.30.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 129
-INFO:convert:[275/363] Writing tensor blk.30.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 129
-INFO:convert:[276/363] Writing tensor blk.30.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 129
-INFO:convert:[277/363] Writing tensor blk.30.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 130
-INFO:convert:[278/363] Writing tensor blk.30.attn_norm.weight                | size   5120           | type F32  | T+ 130
-INFO:convert:[279/363] Writing tensor blk.30.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 131
-INFO:convert:[280/363] Writing tensor blk.30.ffn_norm.weight                 | size   5120           | type F32  | T+ 131
-INFO:convert:[281/363] Writing tensor blk.31.attn_norm.weight                | size   5120           | type F32  | T+ 131
-INFO:convert:[282/363] Writing tensor blk.31.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 131
-INFO:convert:[283/363] Writing tensor blk.31.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 132
-INFO:convert:[284/363] Writing tensor blk.31.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 133
-INFO:convert:[285/363] Writing tensor blk.31.ffn_norm.weight                 | size   5120           | type F32  | T+ 134
-INFO:convert:[286/363] Writing tensor blk.31.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 134
-INFO:convert:[287/363] Writing tensor blk.31.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 134
-INFO:convert:[288/363] Writing tensor blk.31.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 134
-INFO:convert:[289/363] Writing tensor blk.31.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 135
-INFO:convert:[290/363] Writing tensor blk.32.attn_norm.weight                | size   5120           | type F32  | T+ 135
-INFO:convert:[291/363] Writing tensor blk.32.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 135
+INFO:convert:[119/363] Writing tensor blk.7.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  51
+INFO:convert:[120/363] Writing tensor blk.7.ffn_norm.weight                  | size   5120           | type F32  | T+  52
+INFO:convert:[121/363] Writing tensor blk.8.attn_norm.weight                 | size   5120           | type F32  | T+  52
+INFO:convert:[122/363] Writing tensor blk.8.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  52
+INFO:convert:[123/363] Writing tensor blk.8.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  53
+INFO:convert:[124/363] Writing tensor blk.8.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  57
+INFO:convert:[125/363] Writing tensor blk.8.ffn_norm.weight                  | size   5120           | type F32  | T+  57
+INFO:convert:[126/363] Writing tensor blk.8.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  57
+INFO:convert:[127/363] Writing tensor blk.8.attn_output.weight               | size   5120 x   5120  | type F16  | T+  57
+INFO:convert:[128/363] Writing tensor blk.8.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  57
+INFO:convert:[129/363] Writing tensor blk.8.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  57
+INFO:convert:[130/363] Writing tensor blk.9.attn_norm.weight                 | size   5120           | type F32  | T+  58
+INFO:convert:[131/363] Writing tensor blk.9.ffn_down.weight                  | size   5120 x  13824  | type F16  | T+  60
+INFO:convert:[132/363] Writing tensor blk.9.ffn_gate.weight                  | size  13824 x   5120  | type F16  | T+  62
+INFO:convert:[133/363] Writing tensor blk.9.ffn_up.weight                    | size  13824 x   5120  | type F16  | T+  63
+INFO:convert:[134/363] Writing tensor blk.9.ffn_norm.weight                  | size   5120           | type F32  | T+  63
+INFO:convert:[135/363] Writing tensor blk.9.attn_k.weight                    | size   5120 x   5120  | type F16  | T+  63
+INFO:convert:[136/363] Writing tensor blk.9.attn_output.weight               | size   5120 x   5120  | type F16  | T+  63
+INFO:convert:[137/363] Writing tensor blk.9.attn_q.weight                    | size   5120 x   5120  | type F16  | T+  63
+INFO:convert:[138/363] Writing tensor blk.9.attn_v.weight                    | size   5120 x   5120  | type F16  | T+  63
+INFO:convert:[139/363] Writing tensor blk.15.attn_norm.weight                | size   5120           | type F32  | T+  63
+INFO:convert:[140/363] Writing tensor blk.15.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  64
+INFO:convert:[141/363] Writing tensor blk.15.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  64
+INFO:convert:[142/363] Writing tensor blk.15.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  65
+INFO:convert:[143/363] Writing tensor blk.15.ffn_norm.weight                 | size   5120           | type F32  | T+  65
+INFO:convert:[144/363] Writing tensor blk.15.attn_output.weight              | size   5120 x   5120  | type F16  | T+  65
+INFO:convert:[145/363] Writing tensor blk.15.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  66
+INFO:convert:[146/363] Writing tensor blk.16.attn_norm.weight                | size   5120           | type F32  | T+  66
+INFO:convert:[147/363] Writing tensor blk.16.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  66
+INFO:convert:[148/363] Writing tensor blk.16.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  67
+INFO:convert:[149/363] Writing tensor blk.16.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  68
+INFO:convert:[150/363] Writing tensor blk.16.ffn_norm.weight                 | size   5120           | type F32  | T+  68
+INFO:convert:[151/363] Writing tensor blk.16.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  68
+INFO:convert:[152/363] Writing tensor blk.16.attn_output.weight              | size   5120 x   5120  | type F16  | T+  69
+INFO:convert:[153/363] Writing tensor blk.16.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  69
+INFO:convert:[154/363] Writing tensor blk.16.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  69
+INFO:convert:[155/363] Writing tensor blk.17.attn_norm.weight                | size   5120           | type F32  | T+  70
+INFO:convert:[156/363] Writing tensor blk.17.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  70
+INFO:convert:[157/363] Writing tensor blk.17.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  71
+INFO:convert:[158/363] Writing tensor blk.17.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  72
+INFO:convert:[159/363] Writing tensor blk.17.ffn_norm.weight                 | size   5120           | type F32  | T+  72
+INFO:convert:[160/363] Writing tensor blk.17.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  72
+INFO:convert:[161/363] Writing tensor blk.17.attn_output.weight              | size   5120 x   5120  | type F16  | T+  73
+INFO:convert:[162/363] Writing tensor blk.17.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  73
+INFO:convert:[163/363] Writing tensor blk.17.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  74
+INFO:convert:[164/363] Writing tensor blk.18.attn_norm.weight                | size   5120           | type F32  | T+  74
+INFO:convert:[165/363] Writing tensor blk.18.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  74
+INFO:convert:[166/363] Writing tensor blk.18.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  75
+INFO:convert:[167/363] Writing tensor blk.18.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  76
+INFO:convert:[168/363] Writing tensor blk.18.ffn_norm.weight                 | size   5120           | type F32  | T+  77
+INFO:convert:[169/363] Writing tensor blk.18.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  77
+INFO:convert:[170/363] Writing tensor blk.18.attn_output.weight              | size   5120 x   5120  | type F16  | T+  77
+INFO:convert:[171/363] Writing tensor blk.18.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  77
+INFO:convert:[172/363] Writing tensor blk.18.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  78
+INFO:convert:[173/363] Writing tensor blk.19.attn_norm.weight                | size   5120           | type F32  | T+  78
+INFO:convert:[174/363] Writing tensor blk.19.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  78
+INFO:convert:[175/363] Writing tensor blk.19.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  79
+INFO:convert:[176/363] Writing tensor blk.19.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  80
+INFO:convert:[177/363] Writing tensor blk.19.ffn_norm.weight                 | size   5120           | type F32  | T+  81
+INFO:convert:[178/363] Writing tensor blk.19.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  81
+INFO:convert:[179/363] Writing tensor blk.19.attn_output.weight              | size   5120 x   5120  | type F16  | T+  81
+INFO:convert:[180/363] Writing tensor blk.19.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  82
+INFO:convert:[181/363] Writing tensor blk.19.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  82
+INFO:convert:[182/363] Writing tensor blk.20.attn_norm.weight                | size   5120           | type F32  | T+  82
+INFO:convert:[183/363] Writing tensor blk.20.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  83
+INFO:convert:[184/363] Writing tensor blk.20.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  84
+INFO:convert:[185/363] Writing tensor blk.20.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  85
+INFO:convert:[186/363] Writing tensor blk.20.ffn_norm.weight                 | size   5120           | type F32  | T+  85
+INFO:convert:[187/363] Writing tensor blk.20.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  85
+INFO:convert:[188/363] Writing tensor blk.20.attn_output.weight              | size   5120 x   5120  | type F16  | T+  85
+INFO:convert:[189/363] Writing tensor blk.20.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  86
+INFO:convert:[190/363] Writing tensor blk.20.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  86
+INFO:convert:[191/363] Writing tensor blk.21.attn_norm.weight                | size   5120           | type F32  | T+  86
+INFO:convert:[192/363] Writing tensor blk.21.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  87
+INFO:convert:[193/363] Writing tensor blk.21.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  88
+INFO:convert:[194/363] Writing tensor blk.21.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  89
+INFO:convert:[195/363] Writing tensor blk.21.ffn_norm.weight                 | size   5120           | type F32  | T+  89
+INFO:convert:[196/363] Writing tensor blk.21.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  89
+INFO:convert:[197/363] Writing tensor blk.21.attn_output.weight              | size   5120 x   5120  | type F16  | T+  90
+INFO:convert:[198/363] Writing tensor blk.21.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  90
+INFO:convert:[199/363] Writing tensor blk.21.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  90
+INFO:convert:[200/363] Writing tensor blk.22.attn_norm.weight                | size   5120           | type F32  | T+  91
+INFO:convert:[201/363] Writing tensor blk.22.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  91
+INFO:convert:[202/363] Writing tensor blk.22.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+  93
+INFO:convert:[203/363] Writing tensor blk.22.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+  96
+INFO:convert:[204/363] Writing tensor blk.22.ffn_norm.weight                 | size   5120           | type F32  | T+  96
+INFO:convert:[205/363] Writing tensor blk.22.attn_k.weight                   | size   5120 x   5120  | type F16  | T+  97
+INFO:convert:[206/363] Writing tensor blk.22.attn_output.weight              | size   5120 x   5120  | type F16  | T+  97
+INFO:convert:[207/363] Writing tensor blk.22.attn_q.weight                   | size   5120 x   5120  | type F16  | T+  97
+INFO:convert:[208/363] Writing tensor blk.22.attn_v.weight                   | size   5120 x   5120  | type F16  | T+  97
+INFO:convert:[209/363] Writing tensor blk.23.attn_norm.weight                | size   5120           | type F32  | T+  97
+INFO:convert:[210/363] Writing tensor blk.23.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+  99
+INFO:convert:[211/363] Writing tensor blk.23.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 100
+INFO:convert:[212/363] Writing tensor blk.23.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 101
+INFO:convert:[213/363] Writing tensor blk.23.ffn_norm.weight                 | size   5120           | type F32  | T+ 101
+INFO:convert:[214/363] Writing tensor blk.23.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 101
+INFO:convert:[215/363] Writing tensor blk.23.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 101
+INFO:convert:[216/363] Writing tensor blk.23.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 101
+INFO:convert:[217/363] Writing tensor blk.23.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 101
+INFO:convert:[218/363] Writing tensor blk.24.attn_norm.weight                | size   5120           | type F32  | T+ 101
+INFO:convert:[219/363] Writing tensor blk.24.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 102
+INFO:convert:[220/363] Writing tensor blk.24.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 103
+INFO:convert:[221/363] Writing tensor blk.24.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 104
+INFO:convert:[222/363] Writing tensor blk.24.ffn_norm.weight                 | size   5120           | type F32  | T+ 104
+INFO:convert:[223/363] Writing tensor blk.24.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 104
+INFO:convert:[224/363] Writing tensor blk.24.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 104
+INFO:convert:[225/363] Writing tensor blk.24.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 104
+INFO:convert:[226/363] Writing tensor blk.24.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 105
+INFO:convert:[227/363] Writing tensor blk.25.attn_norm.weight                | size   5120           | type F32  | T+ 105
+INFO:convert:[228/363] Writing tensor blk.25.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 105
+INFO:convert:[229/363] Writing tensor blk.25.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 106
+INFO:convert:[230/363] Writing tensor blk.25.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 107
+INFO:convert:[231/363] Writing tensor blk.25.ffn_norm.weight                 | size   5120           | type F32  | T+ 107
+INFO:convert:[232/363] Writing tensor blk.25.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 107
+INFO:convert:[233/363] Writing tensor blk.25.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 108
+INFO:convert:[234/363] Writing tensor blk.25.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 108
+INFO:convert:[235/363] Writing tensor blk.25.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 108
+INFO:convert:[236/363] Writing tensor blk.26.attn_norm.weight                | size   5120           | type F32  | T+ 108
+INFO:convert:[237/363] Writing tensor blk.26.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 109
+INFO:convert:[238/363] Writing tensor blk.26.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 110
+INFO:convert:[239/363] Writing tensor blk.26.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 111
+INFO:convert:[240/363] Writing tensor blk.26.ffn_norm.weight                 | size   5120           | type F32  | T+ 112
+INFO:convert:[241/363] Writing tensor blk.26.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 112
+INFO:convert:[242/363] Writing tensor blk.26.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 112
+INFO:convert:[243/363] Writing tensor blk.26.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 113
+INFO:convert:[244/363] Writing tensor blk.26.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 113
+INFO:convert:[245/363] Writing tensor blk.27.attn_norm.weight                | size   5120           | type F32  | T+ 113
+INFO:convert:[246/363] Writing tensor blk.27.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 113
+INFO:convert:[247/363] Writing tensor blk.27.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 114
+INFO:convert:[248/363] Writing tensor blk.27.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 115
+INFO:convert:[249/363] Writing tensor blk.27.ffn_norm.weight                 | size   5120           | type F32  | T+ 116
+INFO:convert:[250/363] Writing tensor blk.27.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 116
+INFO:convert:[251/363] Writing tensor blk.27.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 116
+INFO:convert:[252/363] Writing tensor blk.27.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 116
+INFO:convert:[253/363] Writing tensor blk.27.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 117
+INFO:convert:[254/363] Writing tensor blk.28.attn_norm.weight                | size   5120           | type F32  | T+ 117
+INFO:convert:[255/363] Writing tensor blk.28.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 117
+INFO:convert:[256/363] Writing tensor blk.28.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 118
+INFO:convert:[257/363] Writing tensor blk.28.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 119
+INFO:convert:[258/363] Writing tensor blk.28.ffn_norm.weight                 | size   5120           | type F32  | T+ 120
+INFO:convert:[259/363] Writing tensor blk.28.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 120
+INFO:convert:[260/363] Writing tensor blk.28.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 120
+INFO:convert:[261/363] Writing tensor blk.28.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 120
+INFO:convert:[262/363] Writing tensor blk.28.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 121
+INFO:convert:[263/363] Writing tensor blk.29.attn_norm.weight                | size   5120           | type F32  | T+ 121
+INFO:convert:[264/363] Writing tensor blk.29.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 121
+INFO:convert:[265/363] Writing tensor blk.29.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 122
+INFO:convert:[266/363] Writing tensor blk.29.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 123
+INFO:convert:[267/363] Writing tensor blk.29.ffn_norm.weight                 | size   5120           | type F32  | T+ 124
+INFO:convert:[268/363] Writing tensor blk.29.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 124
+INFO:convert:[269/363] Writing tensor blk.29.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 124
+INFO:convert:[270/363] Writing tensor blk.29.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 125
+INFO:convert:[271/363] Writing tensor blk.29.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 125
+INFO:convert:[272/363] Writing tensor blk.30.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 126
+INFO:convert:[273/363] Writing tensor blk.30.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 127
+INFO:convert:[274/363] Writing tensor blk.30.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 127
+INFO:convert:[275/363] Writing tensor blk.30.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 128
+INFO:convert:[276/363] Writing tensor blk.30.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 128
+INFO:convert:[277/363] Writing tensor blk.30.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 128
+INFO:convert:[278/363] Writing tensor blk.30.attn_norm.weight                | size   5120           | type F32  | T+ 129
+INFO:convert:[279/363] Writing tensor blk.30.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 129
+INFO:convert:[280/363] Writing tensor blk.30.ffn_norm.weight                 | size   5120           | type F32  | T+ 130
+INFO:convert:[281/363] Writing tensor blk.31.attn_norm.weight                | size   5120           | type F32  | T+ 130
+INFO:convert:[282/363] Writing tensor blk.31.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 130
+INFO:convert:[283/363] Writing tensor blk.31.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 131
+INFO:convert:[284/363] Writing tensor blk.31.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 132
+INFO:convert:[285/363] Writing tensor blk.31.ffn_norm.weight                 | size   5120           | type F32  | T+ 133
+INFO:convert:[286/363] Writing tensor blk.31.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 133
+INFO:convert:[287/363] Writing tensor blk.31.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 133
+INFO:convert:[288/363] Writing tensor blk.31.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 133
+INFO:convert:[289/363] Writing tensor blk.31.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 134
+INFO:convert:[290/363] Writing tensor blk.32.attn_norm.weight                | size   5120           | type F32  | T+ 134
+INFO:convert:[291/363] Writing tensor blk.32.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 134
 INFO:convert:[292/363] Writing tensor blk.32.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 136
-INFO:convert:[293/363] Writing tensor blk.32.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 137
-INFO:convert:[294/363] Writing tensor blk.32.ffn_norm.weight                 | size   5120           | type F32  | T+ 138
-INFO:convert:[295/363] Writing tensor blk.32.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 138
-INFO:convert:[296/363] Writing tensor blk.32.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 138
-INFO:convert:[297/363] Writing tensor blk.32.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 139
-INFO:convert:[298/363] Writing tensor blk.32.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 139
-INFO:convert:[299/363] Writing tensor blk.33.attn_norm.weight                | size   5120           | type F32  | T+ 139
+INFO:convert:[293/363] Writing tensor blk.32.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 136
+INFO:convert:[294/363] Writing tensor blk.32.ffn_norm.weight                 | size   5120           | type F32  | T+ 137
+INFO:convert:[295/363] Writing tensor blk.32.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 137
+INFO:convert:[296/363] Writing tensor blk.32.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 137
+INFO:convert:[297/363] Writing tensor blk.32.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 138
+INFO:convert:[298/363] Writing tensor blk.32.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 138
+INFO:convert:[299/363] Writing tensor blk.33.attn_norm.weight                | size   5120           | type F32  | T+ 138
 INFO:convert:[300/363] Writing tensor blk.33.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 139
-INFO:convert:[301/363] Writing tensor blk.33.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 142
-INFO:convert:[302/363] Writing tensor blk.33.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 143
-INFO:convert:[303/363] Writing tensor blk.33.ffn_norm.weight                 | size   5120           | type F32  | T+ 143
-INFO:convert:[304/363] Writing tensor blk.33.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 144
-INFO:convert:[305/363] Writing tensor blk.33.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 144
-INFO:convert:[306/363] Writing tensor blk.33.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 144
-INFO:convert:[307/363] Writing tensor blk.33.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 144
-INFO:convert:[308/363] Writing tensor blk.34.attn_norm.weight                | size   5120           | type F32  | T+ 144
-INFO:convert:[309/363] Writing tensor blk.34.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 145
-INFO:convert:[310/363] Writing tensor blk.34.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 145
-INFO:convert:[311/363] Writing tensor blk.34.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 146
+INFO:convert:[301/363] Writing tensor blk.33.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 140
+INFO:convert:[302/363] Writing tensor blk.33.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 141
+INFO:convert:[303/363] Writing tensor blk.33.ffn_norm.weight                 | size   5120           | type F32  | T+ 141
+INFO:convert:[304/363] Writing tensor blk.33.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 141
+INFO:convert:[305/363] Writing tensor blk.33.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 142
+INFO:convert:[306/363] Writing tensor blk.33.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 142
+INFO:convert:[307/363] Writing tensor blk.33.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 142
+INFO:convert:[308/363] Writing tensor blk.34.attn_norm.weight                | size   5120           | type F32  | T+ 143
+INFO:convert:[309/363] Writing tensor blk.34.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 143
+INFO:convert:[310/363] Writing tensor blk.34.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 144
+INFO:convert:[311/363] Writing tensor blk.34.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 145
 INFO:convert:[312/363] Writing tensor blk.34.ffn_norm.weight                 | size   5120           | type F32  | T+ 146
 INFO:convert:[313/363] Writing tensor blk.34.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 146
-INFO:convert:[314/363] Writing tensor blk.34.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 147
-INFO:convert:[315/363] Writing tensor blk.34.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 147
+INFO:convert:[314/363] Writing tensor blk.34.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 146
+INFO:convert:[315/363] Writing tensor blk.34.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 146
 INFO:convert:[316/363] Writing tensor blk.34.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 147
-INFO:convert:[317/363] Writing tensor blk.35.attn_norm.weight                | size   5120           | type F32  | T+ 148
-INFO:convert:[318/363] Writing tensor blk.35.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 148
-INFO:convert:[319/363] Writing tensor blk.35.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 149
-INFO:convert:[320/363] Writing tensor blk.35.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 150
+INFO:convert:[317/363] Writing tensor blk.35.attn_norm.weight                | size   5120           | type F32  | T+ 147
+INFO:convert:[318/363] Writing tensor blk.35.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 147
+INFO:convert:[319/363] Writing tensor blk.35.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 148
+INFO:convert:[320/363] Writing tensor blk.35.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 149
 INFO:convert:[321/363] Writing tensor blk.35.ffn_norm.weight                 | size   5120           | type F32  | T+ 150
-INFO:convert:[322/363] Writing tensor blk.35.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 151
-INFO:convert:[323/363] Writing tensor blk.35.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 151
+INFO:convert:[322/363] Writing tensor blk.35.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 150
+INFO:convert:[323/363] Writing tensor blk.35.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 150
 INFO:convert:[324/363] Writing tensor blk.35.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 151
 INFO:convert:[325/363] Writing tensor blk.35.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 151
-INFO:convert:[326/363] Writing tensor blk.36.attn_norm.weight                | size   5120           | type F32  | T+ 152
+INFO:convert:[326/363] Writing tensor blk.36.attn_norm.weight                | size   5120           | type F32  | T+ 151
 INFO:convert:[327/363] Writing tensor blk.36.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 152
-INFO:convert:[328/363] Writing tensor blk.36.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 153
+INFO:convert:[328/363] Writing tensor blk.36.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 152
 INFO:convert:[329/363] Writing tensor blk.36.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 154
 INFO:convert:[330/363] Writing tensor blk.36.ffn_norm.weight                 | size   5120           | type F32  | T+ 154
 INFO:convert:[331/363] Writing tensor blk.36.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 154
@@ -757,21 +757,21 @@ INFO:convert:[339/363] Writing tensor blk.37.ffn_norm.weight                 | s
 INFO:convert:[340/363] Writing tensor blk.37.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 158
 INFO:convert:[341/363] Writing tensor blk.37.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 159
 INFO:convert:[342/363] Writing tensor blk.37.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 159
-INFO:convert:[343/363] Writing tensor blk.37.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 159
+INFO:convert:[343/363] Writing tensor blk.37.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 160
 INFO:convert:[344/363] Writing tensor blk.38.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 160
-INFO:convert:[345/363] Writing tensor blk.38.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 160
+INFO:convert:[345/363] Writing tensor blk.38.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 161
 INFO:convert:[346/363] Writing tensor blk.38.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 161
-INFO:convert:[347/363] Writing tensor blk.38.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 161
-INFO:convert:[348/363] Writing tensor blk.38.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 161
-INFO:convert:[349/363] Writing tensor output.weight                          | size  32000 x   5120  | type F16  | T+ 167
-INFO:convert:[350/363] Writing tensor blk.38.attn_norm.weight                | size   5120           | type F32  | T+ 167
-INFO:convert:[351/363] Writing tensor blk.38.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 168
-INFO:convert:[352/363] Writing tensor blk.38.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 168
-INFO:convert:[353/363] Writing tensor blk.38.ffn_norm.weight                 | size   5120           | type F32  | T+ 168
-INFO:convert:[354/363] Writing tensor blk.39.attn_norm.weight                | size   5120           | type F32  | T+ 168
-INFO:convert:[355/363] Writing tensor blk.39.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 169
-INFO:convert:[356/363] Writing tensor blk.39.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 169
-INFO:convert:[357/363] Writing tensor blk.39.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 170
+INFO:convert:[347/363] Writing tensor blk.38.attn_q.weight                   | size   5120 x   5120  | type F16  | T+ 162
+INFO:convert:[348/363] Writing tensor blk.38.attn_v.weight                   | size   5120 x   5120  | type F16  | T+ 162
+INFO:convert:[349/363] Writing tensor output.weight                          | size  32000 x   5120  | type F16  | T+ 163
+INFO:convert:[350/363] Writing tensor blk.38.attn_norm.weight                | size   5120           | type F32  | T+ 165
+INFO:convert:[351/363] Writing tensor blk.38.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 166
+INFO:convert:[352/363] Writing tensor blk.38.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 166
+INFO:convert:[353/363] Writing tensor blk.38.ffn_norm.weight                 | size   5120           | type F32  | T+ 167
+INFO:convert:[354/363] Writing tensor blk.39.attn_norm.weight                | size   5120           | type F32  | T+ 167
+INFO:convert:[355/363] Writing tensor blk.39.ffn_down.weight                 | size   5120 x  13824  | type F16  | T+ 167
+INFO:convert:[356/363] Writing tensor blk.39.ffn_gate.weight                 | size  13824 x   5120  | type F16  | T+ 168
+INFO:convert:[357/363] Writing tensor blk.39.ffn_up.weight                   | size  13824 x   5120  | type F16  | T+ 169
 INFO:convert:[358/363] Writing tensor blk.39.ffn_norm.weight                 | size   5120           | type F32  | T+ 170
 INFO:convert:[359/363] Writing tensor blk.39.attn_k.weight                   | size   5120 x   5120  | type F16  | T+ 170
 INFO:convert:[360/363] Writing tensor blk.39.attn_output.weight              | size   5120 x   5120  | type F16  | T+ 170

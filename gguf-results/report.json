@@ -5,32 +5,106 @@
   "cases": [
     {
       "name": "mounting-plate",
-      "passed": null,
-      "status": "generation_failed_or_capped",
+      "passed": false,
+      "status": "evaluated",
       "generation": {
-        "status": "failed",
+        "status": "generated",
         "backend": "llama.cpp",
         "quantization": "Q4_K_M",
         "repair_attempts": 0,
-        "error": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf_job.py\", line 105, in infer\n    with urllib.request.urlopen(request,timeout=900) as response: result=json.load(response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n",
-        "seconds": 0.139
+        "stop_type": "eos",
+        "tokens_predicted": 811,
+        "tokens_evaluated": 644,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 644,
+          "prompt_ms": 46139.652,
+          "prompt_per_token_ms": 71.64542236024845,
+          "prompt_per_second": 13.957625861590808,
+          "predicted_n": 811,
+          "predicted_ms": 191798.011,
+          "predicted_per_token_ms": 236.78766790123456,
+          "predicted_per_second": 4.223192908919165
+        },
+        "seconds": 238.109
       },
-      "reason": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf_job.py\", line 105, in infer\n    with urllib.request.urlopen(request,timeout=900) as response: result=json.load(response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n"
+      "predicted": {
+        "valid": true,
+        "solids": 1,
+        "aspect": [
+          1.0,
+          0.5592188487450281,
+          0.14583333333333334
+        ],
+        "volume": 0.07384826596187785,
+        "watertight": true,
+        "euler": 2
+      },
+      "reference": {
+        "valid": true,
+        "solids": 1,
+        "aspect": [
+          1.0,
+          0.550000011920929,
+          0.10000000149011612
+        ],
+        "volume": 0.05192307818297152,
+        "watertight": true,
+        "euler": -2
+      },
+      "views": {
+        "iso": {
+          "iou": 0.8967404931048892,
+          "missing_fraction": 0.01977891467202631,
+          "excess_fraction": 0.08673447674171171,
+          "hole_fill_fraction": 0.0,
+          "rgb_mae": 0.008183767281326594
+        },
+        "front": {
+          "iou": 0.7018065887353879,
+          "missing_fraction": 0.0,
+          "excess_fraction": 0.29819341126461213,
+          "hole_fill_fraction": 0.0,
+          "rgb_mae": 0.004391030704273897
+        },
+        "top": {
+          "iou": 0.8686891239429544,
+          "missing_fraction": 0.07616051288139618,
+          "excess_fraction": 0.0643018187283932,
+          "hole_fill_fraction": 1.0,
+          "rgb_mae": 0.006929838891122855
+        }
+      },
+      "aspect_error": 0.04583333184321722,
+      "volume_error": 0.4222628654958447
     },
     {
       "name": "stepped-flange",
-      "passed": null,
-      "status": "generation_failed_or_capped",
+      "passed": false,
+      "status": "failed",
       "generation": {
-        "status": "failed",
+        "status": "generated",
         "backend": "llama.cpp",
         "quantization": "Q4_K_M",
         "repair_attempts": 0,
-        "error": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf_job.py\", line 105, in infer\n    with urllib.request.urlopen(request,timeout=900) as response: result=json.load(response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n",
-        "seconds": 0.016
+        "stop_type": "eos",
+        "tokens_predicted": 1142,
+        "tokens_evaluated": 644,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 644,
+          "prompt_ms": 46387.625,
+          "prompt_per_token_ms": 72.03047360248448,
+          "prompt_per_second": 13.883012980293774,
+          "predicted_n": 1142,
+          "predicted_ms": 268640.483,
+          "predicted_per_token_ms": 235.44301752848378,
+          "predicted_per_second": 4.247312196799467
+        },
+        "seconds": 315.334
       },
-      "reason": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/gguf_job.py\", line 105, in infer\n    with urllib.request.urlopen(request,timeout=900) as response: result=json.load(response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n  File \"/home/runner/micromamba/envs/bench/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n"
+      "error": "Traceback (most recent call last):\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/bench.py\", line 157, in evaluate\n    pred=measured(shape,mesh); ref=json.loads((d/\"reference.json\").read_text())[\"geometry\"]\n  File \"/home/runner/work/cad-coder-benchmark-public/cad-coder-benchmark-public/bench.py\", line 37, in measured\n    s=float(mesh.extents.max())\nAttributeError: 'NoneType' object has no attribute 'max'\n"
     }
   ],
-  "run_id": "38188111126"
+  "run_id": "38191813807"
 }

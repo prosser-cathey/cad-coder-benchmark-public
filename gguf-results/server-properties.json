@@ -1,0 +1,9 @@
+{
+  "media_marker": "<__media_amMhIjFhuNVvHo5Np4AQ8mztjZEwjIo6__>",
+  "modalities": {
+    "vision": true,
+    "video": true,
+    "audio": false
+  },
+  "build_info": "b1-f2cc728"
+}
