@@ -1,0 +1,176 @@
+name: CAD-Coder GGUF CPU benchmark
+on:
+  push:
+    branches: [main]
+    paths: [gguf_job.py, gguf_status.py, .github/workflows/gguf.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cad-coder-gguf
+  cancel-in-progress: false
+jobs:
+  worker:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash -el {0}
+    env:
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DISABLE_XET: '1'
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '4'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Initialize and record live run ID
+        run: |
+          rm -rf gguf-results
+          mkdir gguf-results
+          env GH_TOKEN='${{ github.token }}' python3 gguf_status.py setup
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cmake ninja-build g++ libopenblas-dev libssl-dev
+          free -h > gguf-results/hardware.txt
+          lscpu >> gguf-results/hardware.txt
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: bench
+          create-args: >-
+            python=3.10 pythonocc-core=7.9.0 numpy=1.26.4 matplotlib-base=3.10.9 pip libstdcxx-ng
+            -c conda-forge
+          cache-environment: false
+      - name: Prepare fixtures and native executables
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'numpy<2' transformers==4.57.1 huggingface-hub==0.36.2 sentencepiece==0.2.1 protobuf==4.25.8 trimesh==5.1.1 scipy pillow pyyaml safetensors
+          python -m pip freeze > gguf-results/environment.txt
+          python gguf_job.py fixtures 2>&1 | tee gguf-results/fixtures.log
+          env GH_TOKEN='${{ github.token }}' python gguf_status.py native_build
+          git init converter
+          git -C converter remote add origin https://github.com/ggml-org/llama.cpp.git
+          git -C converter fetch --depth=1 origin 9b61acf06041dcbaff6afa5f28940e93297f8520
+          git -C converter checkout --detach FETCH_HEAD
+          git init runtime
+          git -C runtime remote add origin https://github.com/ggml-org/llama.cpp.git
+          git -C runtime fetch --depth=1 origin f2cc7282ce0042641df55e0e563b75e824e2b647
+          git -C runtime checkout --detach FETCH_HEAD
+          python -m pip install -e ./converter/gguf-py
+          cmake -S runtime -B runtime/build -G Ninja -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=OFF -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS -DLLAMA_CURL=OFF
+          cmake --build runtime/build --target llama-server llama-quantize -j 4 2>&1 | tee gguf-results/build.log
+          docker build --progress=plain -t cad-executor . 2>&1 | tee gguf-results/docker-build.log
+      - name: Convert the pinned checkpoint without loading the full PyTorch model
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          env GH_TOKEN='${{ github.token }}' python gguf_status.py download_and_convert
+          timeout 20m python -u gguf_job.py convert 2>&1 | tee gguf-results/prepare-model.log
+      - name: Run native CPU inference
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          env GH_TOKEN='${{ github.token }}' python gguf_status.py inference
+          timeout 35m python -u gguf_job.py infer 2>&1 | tee gguf-results/inference.log
+      - name: Sandbox generated CAD and measure results
+        if: always()
+        run: |
+          set -o pipefail
+          export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          env GH_TOKEN='${{ github.token }}' python gguf_status.py cad_validation
+          for part in mounting-plate stepped-flange; do
+            test -f "gguf-results/$part/generated.py" || continue
+            mkdir -p "gguf-sandbox/$part"
+            cp "gguf-results/$part/generated.py" "gguf-sandbox/$part/generated.py"
+            timeout 180s docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 3g --cpus 2 --ulimit fsize=65536:65536 --tmpfs /tmp:rw,nosuid,size=128m --user "$(id -u):$(id -g)" -v "$PWD/gguf-sandbox/$part:/work:rw" cad-executor > "gguf-results/$part/execution.log" 2>&1 || true
+            for f in predicted.step predicted.stl sandbox.json; do
+              test ! -L "gguf-sandbox/$part/$f" || continue
+              test ! -f "gguf-sandbox/$part/$f" || cp "gguf-sandbox/$part/$f" "gguf-results/$part/$f"
+            done
+          done
+          timeout 5m python gguf_job.py evaluate 2>&1 | tee gguf-results/evaluation.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gguf-results
+          path: gguf-results/
+          retention-days: 7
+  publish:
+    if: always()
+    needs: worker
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - run: rm -rf gguf-results && mkdir gguf-results
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: gguf-results
+          path: received
+      - name: Recover available results and record actual worker status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WORKER_RESULT: ${{ needs.worker.result }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs?per_page=100" > gguf-results/jobs.json
+          JOB_ID=$(jq -r '[.jobs[]|select(.name=="worker")][0].id // empty' gguf-results/jobs.json)
+          if test -n "$JOB_ID"; then
+            timeout 45s gh api "repos/$GITHUB_REPOSITORY/actions/jobs/$JOB_ID/logs" > worker-log.txt 2> gguf-results/log-error.txt || true
+            tail -c 24000 worker-log.txt > gguf-results/worker-log-tail.txt || true
+          fi
+          python3 - <<'PY'
+          import pathlib,shutil,json,os
+          root=pathlib.Path('received'); files=[]; total=0
+          for p in root.rglob('*'):
+              if p.is_symlink(): raise RuntimeError('Symlink refused')
+              if not p.is_file(): continue
+              rel=p.relative_to(root)
+              if any(x.startswith('.') for x in rel.parts): raise RuntimeError('Hidden path refused')
+              if p.suffix not in {'.json','.txt','.log','.png','.step','.stl','.py'}: continue
+              total+=p.stat().st_size
+              if total>30*1024*1024: raise RuntimeError('Output limit exceeded')
+              files.append((p,rel))
+          for p,rel in files:
+              q=pathlib.Path('gguf-results')/rel; q.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(p,q)
+          report=pathlib.Path('gguf-results/report.json')
+          if not report.exists(): report.write_text(json.dumps({'status':'no_result_artifact','worker_result':os.environ['WORKER_RESULT'],'run_id':os.environ['GITHUB_RUN_ID'],'accuracy_test_completed':False},indent=2))
+          PY
+      - name: Publish result files
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- gguf-results
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record CAD-Coder GGUF results and worker diagnostics'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
+      - name: Record final live status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WORKER_RESULT: ${{ needs.worker.result }}
+          PUBLISHER_STATUS: ${{ job.status }}
+        run: python3 gguf_status.py completed
