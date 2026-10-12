@@ -1,8 +1,8 @@
 {
-  "phase": "setup",
+  "phase": "native_build",
   "run_id": "38191813807",
   "head_sha": "ac638dca1a3bbaded5ee497bcd2451f017e91112",
-  "updated_at": "2026-10-12T01:25:20.160698+00:00",
+  "updated_at": "2026-10-12T01:27:24.225920+00:00",
   "url": "https://github.com/prosser-cathey/cad-coder-benchmark-public/actions/runs/38191813807",
   "worker_result": null,
   "publisher_status": null,
