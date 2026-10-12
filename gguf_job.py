@@ -1,4 +1,4 @@
-import os,sys,json,time,base64,re,subprocess,traceback,gc
+import os,sys,json,time,base64,re,subprocess,traceback,gc,hashlib
 from pathlib import Path
 B=Path(__file__).resolve().parent
 R=B/"gguf-results"
@@ -9,6 +9,7 @@ CONVERTER="9b61acf06041dcbaff6afa5f28940e93297f8520"
 RUNTIME="f2cc7282ce0042641df55e0e563b75e824e2b647"
 NAMES=("mounting-plate","stepped-flange")
 PROMPT="Generate the CADQuery code needed to create the CAD for the provided image. Just the code, no other words."
+SYSTEM="A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."
 def save(name,value):
     R.mkdir(exist_ok=True); (R/name).write_text(json.dumps(value,indent=2))
 def run(args,log,env=None):
@@ -77,6 +78,27 @@ def convert():
     state.update(stage="ready",language_bytes=(W/"language-q4.gguf").stat().st_size,vision_bytes=(W/"mmproj-model-f16.gguf").stat().st_size)
     save("conversion.json",state)
     (W/"language-f16.gguf").unlink()
+def native_payload(marker,image_bytes,max_tokens):
+    if not isinstance(marker,str) or not marker: raise ValueError("Missing server media marker")
+    if not image_bytes: raise ValueError("Empty image")
+    if not isinstance(max_tokens,int) or max_tokens<=0: raise ValueError("Invalid token limit")
+    prompt=SYSTEM+" USER: "+marker+"\n"+PROMPT+" ASSISTANT:"
+    data=[base64.b64encode(image_bytes).decode("ascii")]
+    if prompt.count(marker)!=len(data): raise ValueError("Image/marker count mismatch")
+    return {"prompt":{"prompt_string":prompt,"multimodal_data":data},"temperature":0,"top_k":1,"seed":7,"n_predict":max_tokens,"cache_prompt":False,"stream":False}
+def completed_text(result):
+    if result.get("stop_type") not in ("eos","word"): raise RuntimeError("Incomplete native completion; not scored")
+    text=result.get("content")
+    if not isinstance(text,str) or not text.strip(): raise RuntimeError("Native completion has no code content")
+    return text
+def request_json(request,directory,timeout):
+    import urllib.request,urllib.error
+    try:
+        with urllib.request.urlopen(request,timeout=timeout) as response: return json.load(response)
+    except urllib.error.HTTPError as error:
+        body=error.read(16000).decode("utf-8",errors="replace")
+        (directory/"http-error.json").write_text(json.dumps({"status":error.code,"reason":str(error.reason),"body":body},indent=2))
+        raise
 def infer():
     import urllib.request
     settings=json.loads((R/"conversion.json").read_text())
@@ -94,28 +116,32 @@ def infer():
             except Exception: pass
             time.sleep(1)
         if not ready: raise RuntimeError("Native server readiness timeout")
-        save("inference.json",{"model":MODEL,"revision":REV,"backend":"llama.cpp","quantization":"Q4_K_M","runtime_revision":RUNTIME,"status":"generating","max_tokens":settings["max_tokens"],"seconds_per_case":900})
+        props=request_json("http://127.0.0.1:8080/props",R,10)
+        marker=props.get("media_marker")
+        if not isinstance(marker,str) or not marker: raise RuntimeError("Server did not provide its media marker")
+        save("server-properties.json",{"media_marker":marker,"modalities":props.get("modalities"),"build_info":props.get("build_info")})
+        save("inference.json",{"model":MODEL,"revision":REV,"backend":"llama.cpp","quantization":"Q4_K_M","runtime_revision":RUNTIME,"status":"generating","request_api":"native /completions","max_tokens":settings["max_tokens"],"seconds_per_case":900})
         for name in NAMES:
             d=R/name; started=time.monotonic(); rec={"status":"running","backend":"llama.cpp","quantization":"Q4_K_M","repair_attempts":0}
             (d/"generation.json").write_text(json.dumps(rec,indent=2))
             try:
-                image="data:image/png;base64,"+base64.b64encode((d/"reference-iso.png").read_bytes()).decode()
-                body={"messages":[{"role":"system","content":"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."},{"role":"user","content":[{"type":"image_url","image_url":{"url":image}},{"type":"text","text":PROMPT}]}],"temperature":0,"seed":7,"max_tokens":settings["max_tokens"],"stream":False}
-                request=urllib.request.Request("http://127.0.0.1:8080/v1/chat/completions",data=json.dumps(body).encode(),headers={"Content-Type":"application/json"})
-                with urllib.request.urlopen(request,timeout=900) as response: result=json.load(response)
+                image_bytes=(d/"reference-iso.png").read_bytes()
+                body=native_payload(marker,image_bytes,settings["max_tokens"])
+                (d/"request-format.json").write_text(json.dumps({"endpoint":"/completions","prompt":body["prompt"]["prompt_string"],"image_count":len(body["prompt"]["multimodal_data"]),"marker_count":body["prompt"]["prompt_string"].count(marker),"input_sha256":hashlib.sha256(image_bytes).hexdigest(),"n_predict":body["n_predict"]},indent=2))
+                request=urllib.request.Request("http://127.0.0.1:8080/completions",data=json.dumps(body).encode(),headers={"Content-Type":"application/json"})
+                result=request_json(request,d,900)
                 (d/"response.json").write_text(json.dumps(result,indent=2))
-                choice=result["choices"][0]; raw=choice["message"]["content"]
-                (d/"raw.txt").write_text(raw)
-                rec.update(finish_reason=choice["finish_reason"],usage=result.get("usage"))
-                if choice["finish_reason"]!="stop": raise RuntimeError("Incomplete generation; not scored")
+                if isinstance(result.get("content"),str): (d/"raw.txt").write_text(result["content"])
+                rec.update(stop_type=result.get("stop_type"),tokens_predicted=result.get("tokens_predicted"),tokens_evaluated=result.get("tokens_evaluated"),timings=result.get("timings"))
+                raw=completed_text(result)
                 code=re.sub(r"```(?:python)?\s*\n|```","",raw).strip()
                 compile(code,"generated.py","exec")
                 (d/"generated.py").write_text(code+"\n"); rec["status"]="generated"
-            except Exception:
-                rec["status"]="failed"; rec["error"]=traceback.format_exc()
+            except Exception as error:
+                rec["status"]="failed"; rec["error"]=traceback.format_exc(); rec["http_status"]=getattr(error,"code",None)
             rec["seconds"]=round(time.monotonic()-started,3)
             (d/"generation.json").write_text(json.dumps(rec,indent=2))
-        save("inference.json",{"model":MODEL,"revision":REV,"backend":"llama.cpp","quantization":"Q4_K_M","status":"finished"})
+        save("inference.json",{"model":MODEL,"revision":REV,"backend":"llama.cpp","quantization":"Q4_K_M","request_api":"native /completions","status":"finished"})
     finally:
         p.terminate()
         try: p.wait(timeout=15)
